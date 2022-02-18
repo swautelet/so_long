@@ -6,7 +6,7 @@
 #    By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 19:32:53 by swautele          #+#    #+#              #
-#    Updated: 2022/02/18 21:44:23 by simonwautel      ###   ########.fr        #
+#    Updated: 2022/02/18 21:52:20 by simonwautel      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,7 +50,7 @@ fclean : clean
 re : fclean all
 
 save : fclean
-	git add $(FILES) $(MAPS) ./libft Makefile
+	git add $(FILES) $(MAPS) libft/* Makefile
 	git commit -m autosave
 	git push https://github.com/swautelet/so_long.git
 
