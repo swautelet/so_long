@@ -6,7 +6,7 @@
 #    By: swautele <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 19:32:53 by swautele          #+#    #+#              #
-#    Updated: 2022/02/18 18:47:06 by swautele         ###   ########.fr        #
+#    Updated: 2022/02/18 19:40:43 by swautele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,16 +19,17 @@ FILES = src/so_long.c \
 		src/draw.c \
 		src/error.c \
 		src/map_reader.c \
-		src/libft/libft.a \
 		src/get_next_line.c \
-		src/get_next_line_utils.c
+		src/get_next_line_utils.c 
+LIBFT = libft/libft.a
 OBJECT = $(FILES:.c=.o)
 MAP = ./map/map_test.ber
+MAPS = ./map
 
 all : $(NAME)
 
 $(NAME) : lib $(OBJECT)
-	$(CC) $(CFLAGS) $(IFLAGS) $(OBJECT) $(LFLAGS) -o $(NAME)
+	$(CC) $(CFLAGS) $(IFLAGS) $(OBJECT) $(LIBFT) $(LFLAGS) -o $(NAME)
 
 lib :
 	make -C libft
@@ -47,5 +48,10 @@ fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
+
+save : fclean
+	git add $(FILES) $(MAPS) ./libft Makefile
+	git commit -m autosave
+	git push https://github.com/swautelet/so_long.git
 
 .phony : $(NAME) clean re test all lib
