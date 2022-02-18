@@ -1,26 +1,37 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map_reader.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/18 22:28:08 by simonwautel       #+#    #+#             */
+/*   Updated: 2022/02/18 22:45:15 by simonwautel      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 char	**map_reader(char *name)
 {
 	int		fd;
 	char	*line;
-	size_t	height;
-	size_t	len;
-	char	**map;
+	int		height;
+	int		len;
 
-	high = 1;
+	height = -1;
 	fd = open (name, O_RDONLY);
 	line = get_next_line(fd);
-	len = ft_strlen(line);
+	len = ft_strlen(line) - 1;
 	while (line)
 	{
-	line = get_next_line(fd);
-	if (len != ft_strlen(line))
+		line = get_next_line(fd);
+		if (len != ft_strlen(line) - 1)
 		{
 			printf("error\nthe map is not a rectangle");
 			return (NULL);
 		}
-	height++;
+		height++;
 	}
 	close (fd);
 	if (height < 3 || len < 3)
@@ -28,17 +39,16 @@ char	**map_reader(char *name)
 		printf("error\nthe map is too little");
 		return (NULL);
 	}
-	map = map_translate(len, height, name);
-	return (map);
+	return (map_translate(len, height, name));
 }
 
-char	**map_translate(const int len, const int height, char *name)
+char	**map_translate(int const len, int const height, char *name)
 {
 	int		fd;
-	char 	map[len][height];
+	char	map[len][height];
 	int		i;
 	int		j;
-	char 	*line;
+	char	*line;
 
 	i = 0;
 	j = 0;
