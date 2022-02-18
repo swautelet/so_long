@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: swautele <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 19:32:53 by swautele          #+#    #+#              #
-#    Updated: 2022/02/18 19:40:43 by swautele         ###   ########.fr        #
+#    Updated: 2022/02/18 21:44:23 by simonwautel      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ test : re
 	./$(NAME) $(MAP)
 
 %.o : %.c
-	gcc -c $(CFLAGS) $?
+	gcc -c $(CFLAGS) $? -o $(?:.c=.o)
 
 clean :
 	rm -f $(OBJECT)
