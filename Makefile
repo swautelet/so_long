@@ -6,7 +6,7 @@
 #    By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 19:32:53 by swautele          #+#    #+#              #
-#    Updated: 2022/02/18 21:52:20 by simonwautel      ###   ########.fr        #
+#    Updated: 2022/02/19 01:28:02 by simonwautel      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ LIBFT = libft/libft.a
 OBJECT = $(FILES:.c=.o)
 MAP = ./map/map_test.ber
 MAPS = ./map
+HEADER = ./src/so_long.h
 
 all : $(NAME)
 
@@ -50,7 +51,7 @@ fclean : clean
 re : fclean all
 
 save : fclean
-	git add $(FILES) $(MAPS) libft/* Makefile
+	git add $(FILES) $(MAPS) libft/* Makefile $(HEADER)
 	git commit -m autosave
 	git push https://github.com/swautelet/so_long.git
 
