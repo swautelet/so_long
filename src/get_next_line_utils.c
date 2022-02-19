@@ -6,11 +6,11 @@
 /*   By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 22:01:09 by simonwautel       #+#    #+#             */
-/*   Updated: 2022/02/18 18:04:37 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/19 01:17:42 by simonwautel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"get_next_line.h"
+#include"so_long.h"
 
 size_t	ft_strlengnl(char *str)
 {

@@ -6,11 +6,11 @@
 /*   By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 22:01:05 by simonwautel       #+#    #+#             */
-/*   Updated: 2022/02/15 20:30:45 by simonwautel      ###   ########.fr       */
+/*   Updated: 2022/02/19 01:17:34 by simonwautel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"get_next_line.h"
+#include"so_long.h"
 
 char	*gnl(char *result, char *buffer, int size, int fd)
 {
