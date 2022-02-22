@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+         #
+#    By: swautele <swautele@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 19:32:53 by swautele          #+#    #+#              #
-#    Updated: 2022/02/19 01:28:02 by simonwautel      ###   ########.fr        #
+#    Updated: 2022/02/22 15:59:20 by swautele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ FILES = src/so_long.c \
 		src/get_next_line_utils.c 
 LIBFT = libft/libft.a
 OBJECT = $(FILES:.c=.o)
-MAP = ./map/map_test.ber
+MAP = map/map_test.ber
 MAPS = ./map
 HEADER = ./src/so_long.h
 
@@ -33,7 +33,7 @@ $(NAME) : lib $(OBJECT)
 	$(CC) $(CFLAGS) $(IFLAGS) $(OBJECT) $(LIBFT) $(LFLAGS) -o $(NAME)
 
 lib :
-	make -C libft
+	make bonus -C libft
 
 test : re
 	./$(NAME) $(MAP)

@@ -6,7 +6,7 @@
 /*   By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 22:01:09 by simonwautel       #+#    #+#             */
-/*   Updated: 2022/02/19 01:17:42 by simonwautel      ###   ########.fr       */
+/*   Updated: 2022/02/22 13:52:23 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	*ft_straddback(char *result, char *buffer, ssize_t size)
 	ssize_t	i;
 
 	i = -1;
-	newresult = malloc(sizeof(char) * (size + ft_strlen(result)));
+	newresult = malloc(sizeof(char) * (size + ft_strlengnl(result)));
 	if (!newresult)
 	{
 		free (result);
@@ -89,7 +89,7 @@ char	*ft_initialize(char *buffer)
 	i = 0;
 	while (buffer[i] && buffer[i] == -1)
 		i++;
-	new = malloc((ft_strlen(&buffer[i])) * sizeof(char));
+	new = malloc((ft_strlengnl(&buffer[i])) * sizeof(char));
 	if (!new)
 		return (NULL);
 	if (!buffer[i])

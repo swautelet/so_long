@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+        */
+/*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/18 22:27:05 by simonwautel       #+#    #+#             */
-/*   Updated: 2022/02/19 01:25:17 by simonwautel      ###   ########.fr       */
+/*   Created: 2022/02/22 13:03:30 by swautele          #+#    #+#             */
+/*   Updated: 2022/02/22 16:42:31 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,18 @@
 
 int	main(int argc, char **argv)
 {
-	char	**map;
+	t_list	*map;
+	t_list	*next;
 
 	if (ft_error(argc, argv) == -1)
 		return (-1);
 	map = map_reader(argv[1]);
-	if (map == NULL)
-		return (-1);
-	free_map(map);
-	return (0);
-}
-
-void free_map(char **map)
-{
-	int	i;
-
-	i = 0;
-	while (map[i])
+	next = map;
+	while(next->content)
 	{
-		free(map[i]);
-		i++;
+		printf("%s", next->content);
+		next = next->next;
 	}
-	free(map);
+	ft_lstclear(&map, &free);
+	return (0);
 }

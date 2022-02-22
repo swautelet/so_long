@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+        */
+/*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/18 22:30:03 by simonwautel       #+#    #+#             */
-/*   Updated: 2022/02/19 01:21:28 by simonwautel      ###   ########.fr       */
+/*   Created: 2022/02/22 13:03:08 by swautele          #+#    #+#             */
+/*   Updated: 2022/02/22 16:25:33 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_error(int argc, char **argv)
 {
-	char *ext;
+	char	*ext;
 
 	ext = ".ber";
 	if (argc < 2)
@@ -27,7 +27,7 @@ int	ft_error(int argc, char **argv)
 		printf("error\nthere's too much map");
 		return (-1);
 	}
-	if (ft_strnstr(argv[1], ".ber", SIZE_T_MAX) != ext)
+	if (ft_strncmp(ft_strnstr(argv[1], ".ber", SIZE_T_MAX), ext, 4) != 0)
 	{
 		printf("error\nthe map is in the wrong format");
 		return (-1);

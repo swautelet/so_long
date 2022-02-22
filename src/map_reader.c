@@ -3,72 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   map_reader.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+        */
+/*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/18 22:28:08 by simonwautel       #+#    #+#             */
-/*   Updated: 2022/02/19 01:06:24 by simonwautel      ###   ########.fr       */
+/*   Created: 2022/02/22 13:02:17 by swautele          #+#    #+#             */
+/*   Updated: 2022/02/22 16:38:22 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char	**map_reader(char *name)
+t_list	*map_reader(char *name)
 {
 	int		fd;
 	char	*line;
-	size_t	height;
-	size_t	len;
+	t_list	*map;
+	t_list	*new;
 
-	height = -1;
-	fd = open (name, O_RDONLY);
+	fd = open(name, O_RDONLY);
 	line = get_next_line(fd);
-	len = ft_strlen(line) - 1;
+	map = ft_lstnew(line);
 	while (line)
 	{
 		line = get_next_line(fd);
-		if (len != ft_strlen(line) - 1)
-		{
-			printf("error\nthe map is not a rectangle");
-			return (NULL);
-		}
-		height++;
-	}
-	close (fd);
-	if (height < 3 || len < 3)
-	{
-		printf("error\nthe map is too little");
-		return (NULL);
-	}
-	return (map_translate(len, height, name));
-}
-
-char	**map_translate(int const len, int const height, char *name)
-{
-	int		fd;
-	char	**map;
-	int		i;
-	int		j;
-	char	*line;
-
-	i = 0;
-	j = 0;
-	map = malloc(height * sizeof(char *));
-	while (i < height)
-	{
-		map[i] = malloc (len * sizeof(char));
-		i++;
-	}
-	fd = open(name, O_RDONLY);
-	while (j < height)
-	{
-		line = get_next_line(fd);
-		while (i < len)
-		{
-			map[i][j] = line[i];
-			i++;
-		}
-		j++;
-		i = 0;
+		new = ft_lstnew(line);
+		ft_lstadd_back(&map, new);
 	}
 	close(fd);
 	return (map);
