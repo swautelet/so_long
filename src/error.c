@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/22 18:24:06 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/22 20:36:38 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,15 @@ int	map_error(t_list *map)
 	size_t	height;
 
 	len = ft_strlen(map->content);
+	while(map->content[0] != '\n')
+	{
+		if (map->content[0] != '1')
+		{
+			printf("error\nthere miss a wall around the map");
+			return (-1);
+		}
+		map->content++;
+	}
 	height = 1;
 	while (map->next != NULL)
 	{
@@ -50,7 +59,21 @@ int	map_error(t_list *map)
 			printf("error\nthe map is not a rectangle");
 			return (-1);
 		}
+		if (map->content[0] != '1' || map->content[len])
+		{
+			printf("error\nthere miss a wall around the map");
+			return (-1);
+		}
 		height++;
+	}
+	while(map->content[0] != '\n')
+	{
+		if (map->content[0] != '1')
+		{
+			printf("error\nthere miss a wall around the map");
+			return (-1);
+		}
+		map->content++;
 	}
 	if (len < 3 || height < 3)
 	{
