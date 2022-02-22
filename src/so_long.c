@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:30 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/22 16:42:31 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/22 18:24:27 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,14 @@ int	main(int argc, char **argv)
 	if (ft_error(argc, argv) == -1)
 		return (-1);
 	map = map_reader(argv[1]);
+	if (map_error(map) == -1)
+		return (-1);
 	next = map;
-	while(next->content)
+	printf("%s", next->content);
+	while(next->next)
 	{
-		printf("%s", next->content);
 		next = next->next;
+		printf("%s", next->content);
 	}
 	ft_lstclear(&map, &free);
 	return (0);

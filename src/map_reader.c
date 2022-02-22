@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:02:17 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/22 16:38:22 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/22 18:08:25 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,16 @@ t_list	*map_reader(char *name)
 	while (line)
 	{
 		line = get_next_line(fd);
-		new = ft_lstnew(line);
-		ft_lstadd_back(&map, new);
+		if (line != NULL)
+		{
+			new = ft_lstnew(line);
+			if (new == NULL)
+			{
+				free(line);
+				return (map);
+			}
+			ft_lstadd_back(&map, new);
+		}
 	}
 	close(fd);
 	return (map);

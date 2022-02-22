@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:04:20 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/22 16:23:54 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/22 18:11:48 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int		ft_end_of_line(char *str);
 char	*ft_initialize(char *buffer);
 char	*gnl(char *result, char *buffer, int size, int fd);
 void	ft_straddback2(char *newresult, char *buffer, ssize_t i, ssize_t size);
+int		map_error(t_list *map);
 
 #endif
