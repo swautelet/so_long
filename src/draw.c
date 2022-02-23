@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:33:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/23 14:33:14 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/23 15:34:01 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,38 @@ int	draw(t_list *map)
 {
 	void	*video_ptr;
 	void	*win_ptr;
-	void	*img;
-	int		i;
-	(void)	map;
+	void	*floor;
+	void	*wall;
+	int		size;
+	size_t	i;
+	int		j;
 
-	i = 50;
+	size = 64;
+	i = 0;
+	j = 0;
 	video_ptr = mlx_init();
-	win_ptr = mlx_new_window(video_ptr, 500, 500, "test");
-	img = mlx_xpm_file_to_image(video_ptr, "./sprite/floor.xpm", &i, &i);
-	mlx_put_image_to_window(video_ptr, win_ptr, img, 0, 0);
+	win_ptr = mlx_new_window(video_ptr, (ft_strlen(map->content) - 1) * size, ft_lstsize(map) * size, "so_long");
+	floor = mlx_xpm_file_to_image(video_ptr, "./sprite/floor.xpm", &size, &size);
+	wall = mlx_xpm_file_to_image(video_ptr, "./sprite/wall.xpm", &size, &size);
+	while (i < ft_strlen(map->content) - 1)
+	{
+		mlx_put_image_to_window(video_ptr, win_ptr, wall, size * i, size * j);
+		i++;
+	}
+	while (map->next)
+	{
+		i = 0;
+		j++;
+		map = map->next;
+		while (i < ft_strlen(map->content) - 1)
+		{
+			if (map->content[i] == '1')
+				mlx_put_image_to_window(video_ptr, win_ptr, wall, size * i, size * j);
+			if (map->content[i] == '0' || map->content[i] == 'C' || map->content[i] == 'P')
+				mlx_put_image_to_window(video_ptr, win_ptr, floor, size * i, size * j);
+			i++;
+		}
+	}
 	mlx_loop(video_ptr);
 	return (0);
 }
