@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/22 21:10:39 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/23 13:24:05 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,18 @@ int	map_error(t_list *map)
 {
 	size_t	len;
 	size_t	height;
+	int		i;
 
+	i = 0;
 	len = ft_strlen(map->content);
-	while(map->content[0] != '\n')
+	while (map->content[i] != '\n')
 	{
-		if (map->content[0] != '1')
+		if (map->content[i] != '1')
 		{
 			printf("error\nthere miss a wall around the map");
 			return (-1);
 		}
-		map->content++;
+		i++;
 	}
 	height = 1;
 	while (map->next != NULL)
@@ -66,14 +68,14 @@ int	map_error(t_list *map)
 		}
 		height++;
 	}
-	while(map->content[0] != '\n')
+	while (map->content[i] != '\n')
 	{
-		if (map->content[0] != '1')
+		if (map->content[i] != '1')
 		{
 			printf("error\nthere miss a wall around the map");
 			return (-1);
 		}
-		map->content++;
+		i++;
 	}
 	if (len < 3 || height < 3)
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+        */
+/*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:30 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/23 12:54:29 by simonwautel      ###   ########.fr       */
+/*   Updated: 2022/02/23 13:24:52 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ int	main(int argc, char **argv)
 		return (-1);
 	}
 	next = map;
-	printf("%p", next->content);
-	while(next->next)
+	printf("%s", next->content);
+	while (next->next)
 	{
 		next = next->next;
-		printf("%p", next->content);
+		printf("%s", next->content);
 	}
 	ft_lstclear(&map, &free);
 	return (0);
