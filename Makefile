@@ -6,7 +6,7 @@
 #    By: swautele <swautele@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 19:32:53 by swautele          #+#    #+#              #
-#    Updated: 2022/02/23 14:48:48 by swautele         ###   ########.fr        #
+#    Updated: 2022/02/23 16:49:22 by swautele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(NAME) : lib $(OBJECT)
 lib :
 	make bonus -C libft
 
-test : re
+test : all
 	./$(NAME) $(MAP)
 
 %.o : %.c
