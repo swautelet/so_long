@@ -6,7 +6,7 @@
 #    By: swautele <swautele@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 19:32:53 by swautele          #+#    #+#              #
-#    Updated: 2022/02/22 20:57:47 by swautele         ###   ########.fr        #
+#    Updated: 2022/02/23 14:48:48 by swautele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ OBJECT = $(FILES:.c=.o)
 MAP = map/map_test.ber
 MAPS = ./map
 HEADER = ./src/so_long.h
+SPRITE = ./sprite
 
 all : $(NAME)
 
@@ -51,7 +52,7 @@ fclean : clean
 re : fclean all
 
 save : fclean
-	git add $(FILES) $(MAPS) libft/* Makefile $(HEADER)
+	git add $(FILES) $(MAPS) libft/* Makefile $(HEADER) $(SPRITE)
 	git commit -m autosave
 	git push https://github.com/swautelet/so_long.git
 
