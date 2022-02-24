@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:33:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/24 20:29:17 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/24 20:44:04 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,12 @@ int	init_sprite(t_list_c *map)
 	sprite->wall = mlx_xpm_file_to_image(sprite->video, "./sprite/wall.xpm", &sprite->size, &sprite->size);
 	sprite->player = mlx_xpm_file_to_image(sprite->video, "./sprite/player.xpm", &sprite->size, &sprite->size);
 	return (draw(map, sprite));
+}
+
+int	ft_exit(void)
+{
+	printf("test\n");
+	exit(0);
 }
 
 int	draw(t_list_c *map, t_img *sprite)
@@ -83,7 +89,7 @@ int	draw(t_list_c *map, t_img *sprite)
 			i++;
 		}
 	}
-//	mlx_hook(sprite->win, 17, );
+	mlx_hook(sprite->win, 17, 1L<<5, ft_exit, NULL);
 	mlx_loop(sprite->video);
 	return (0);
 }
