@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:30 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/24 16:36:49 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/24 18:52:00 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 		next = next->next;
 		printf("%s", next->content);
 	}
-	draw(map);
+	init_sprite(map);
 	ft_lstclear_c(&map, &free);
 	return (0);
 }
