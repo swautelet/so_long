@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:04:20 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/24 19:17:23 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/24 19:35:21 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct s_img{
 	void	*floor;
 	void	*wall;
 	int		size;
+	int		flag;
 }	t_img;
 int			ft_error(int argc, char **argv);
 t_list_c	*map_reader(char *name);
