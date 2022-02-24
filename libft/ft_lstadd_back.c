@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/27 12:47:27 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/24 16:33:40 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/24 19:26:35 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	ft_lstadd_back_c(t_list_c **alst, t_list_c *new)
 		}
 	}
 }
+
 void	ft_lstadd_back_v(t_list_v **alst, t_list_v *new)
 {
 	t_list_v	*last;

@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 21:38:59 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/24 16:33:04 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/24 19:27:02 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ typedef struct s_list_c
 	struct s_list_c	*next;
 }	t_list_c;
 typedef struct s_list_v{
-	void	*content;
+	void			*content;
 	struct s_list_v	*next;
 }	t_list_v;
 int			ft_atoi(const char *str);

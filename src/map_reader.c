@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:02:17 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/24 16:26:43 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/24 19:27:20 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 t_list_c	*map_reader(char *name)
 {
-	int		fd;
-	char	*line;
+	int			fd;
+	char		*line;
 	t_list_c	*map;
 	t_list_c	*new;
 
