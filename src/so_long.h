@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:04:20 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/25 13:27:55 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/25 13:36:05 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ int			map_error(t_list_c *map);
 int			draw(t_list_c *map, t_img *sprite);
 int			init_sprite(t_list_c *map);
 int			keyplan(int keycode, t_list_c *map, t_img *sprite);
+int			ft_exit(t_list_c *map);
 
 #endif

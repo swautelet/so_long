@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 21:38:59 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/24 19:27:02 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/25 14:36:25 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 typedef struct s_list_c
 {
 	char			*content;
+	int				line;
 	struct s_list_c	*next;
 }	t_list_c;
 typedef struct s_list_v{
