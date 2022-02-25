@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+        */
+/*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:33:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/24 23:27:34 by simonwautel      ###   ########.fr       */
+/*   Updated: 2022/02/25 13:30:42 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,14 @@ int	init_sprite(t_list_c *map)
 	sprite->poopbag = mlx_xpm_file_to_image(sprite->video, "./sprite/poopbag.xpm", &sprite->size, &sprite->size);
 	sprite->key = mlx_xpm_file_to_image(sprite->video, "./sprite/key.xpm", &sprite->size, &sprite->size);
 	sprite->floor = mlx_xpm_file_to_image(sprite->video, "./sprite/floor.xpm", &sprite->size, &sprite->size);
-	sprite->wall = mlx_xpm_file_to_image(sprite->video, "./sprite/wall.xpm", &sprite->size, &sprite->size);
+	sprite->wall = mlx_xpm_file_to_image(sprite->video, "./sprite/wall_a.xpm", &sprite->size, &sprite->size);
 	sprite->player = mlx_xpm_file_to_image(sprite->video, "./sprite/player_.xpm", &sprite->size, &sprite->size);
 	return (draw(map, sprite));
 }
 
-int	ft_exit(void)
+int	ft_exit(t_list_c *map)
 {
+	ft_lstclear_c(&map, free);
 	exit(0);
 }
 
@@ -88,6 +89,7 @@ int	draw(t_list_c *map, t_img *sprite)
 			i++;
 		}
 	}
+	mlx_hook(sprite->win, 02, 1L<<0, keyplan, map);
 	mlx_hook(sprite->win, 17, 1L<<5, ft_exit, NULL);
 	mlx_loop(sprite->video);
 	return (0);
