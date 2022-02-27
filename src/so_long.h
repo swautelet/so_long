@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:04:20 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/27 18:31:33 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/27 19:10:55 by simonwautel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ typedef struct s_img{
 	void		*wall;
 	int			size;
 	int			flag;
+	int			pos_x;
+	int			pos_y;
 	t_list_c	*map;
 }	t_img;
 int			ft_error(int argc, char **argv);
@@ -58,5 +60,9 @@ int			init_sprite(t_list_c *map);
 int			keyplan(int keycode, t_img *sprite);
 int			ft_exit(t_list_c *map);
 void		move_up(t_img *sprite);
+void		move_left(t_img *sprite);
+void		move_down(t_img *sprite);
+void		move_right(t_img *sprite);
+int			ft_authorized(t_img *sprite, char str);
 
 #endif
