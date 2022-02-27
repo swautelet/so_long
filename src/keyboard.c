@@ -16,7 +16,7 @@ int	ft_exit(t_list_c *map)
 	exit(0);
 }
 
-void		move_up(t_img *sprite)
+void	move_up(t_img *sprite)
 {
 	printf("%p", sprite);
 }
