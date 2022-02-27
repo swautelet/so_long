@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:04:20 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/25 13:36:05 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/27 18:31:33 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,19 @@
 # endif
 
 typedef struct s_img{
-	void	*poopbag;
-	void	*key;
-	void	*player;
-	void	*leash;
-	void	*collar;
-	void	*boot;
-	void	*video;
-	void	*win;
-	void	*floor;
-	void	*wall;
-	int		size;
-	int		flag;
+	void		*poopbag;
+	void		*key;
+	void		*player;
+	void		*leash;
+	void		*collar;
+	void		*boot;
+	void		*video;
+	void		*win;
+	void		*floor;
+	void		*wall;
+	int			size;
+	int			flag;
+	t_list_c	*map;
 }	t_img;
 int			ft_error(int argc, char **argv);
 t_list_c	*map_reader(char *name);
@@ -54,7 +55,8 @@ void		ft_straddback2(char *newresult, char *buffer, ssize_t i, ssize_t size);
 int			map_error(t_list_c *map);
 int			draw(t_list_c *map, t_img *sprite);
 int			init_sprite(t_list_c *map);
-int			keyplan(int keycode, t_list_c *map, t_img *sprite);
+int			keyplan(int keycode, t_img *sprite);
 int			ft_exit(t_list_c *map);
+void		move_up(t_img *sprite);
 
 #endif

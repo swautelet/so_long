@@ -1,17 +1,11 @@
 #include "so_long.h"
 
-int	keyplan(int keycode, t_list_c *map, t_img *sprite)
+int	keyplan(int keycode, t_img *sprite)
 {
-	(void) map;
-	(void)sprite;
-
 	if (keycode == 53)
-	{
-/*		ft_lstclear_c(&map, free);
-		mlx_destroy_window(sprite->video, sprite->win);
-		exit(0);*/
-		ft_exit(map);
-	}
+		ft_exit(sprite->map);
+	if (keycode == 13)
+		move_up(sprite);
 	printf("%d\n", keycode);
 	return(0);
 }
@@ -20,4 +14,9 @@ int	ft_exit(t_list_c *map)
 {
 	ft_lstclear_c(&map, free);
 	exit(0);
+}
+
+void		move_up(t_img *sprite)
+{
+	printf("%p", sprite);
 }
