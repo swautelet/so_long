@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: swautele <swautele@student.42.fr>          +#+  +:+       +#+         #
+#    By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 19:32:53 by swautele          #+#    #+#              #
-#    Updated: 2022/02/25 13:20:48 by swautele         ###   ########.fr        #
+#    Updated: 2022/02/28 15:31:59 by simonwautel      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ FILES = src/so_long.c \
 		src/map_reader.c \
 		src/get_next_line.c \
 		src/get_next_line_utils.c \
-		src/keyboard.c
+		src/keyboard.c \
+		src/check.c
 LIBFT = libft/libft.a
 OBJECT = $(FILES:.c=.o)
 MAP = map/map_test.ber
