@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:04:20 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/28 16:37:19 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/28 17:34:52 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,16 @@ typedef struct s_img{
 	void		*win;
 	void		*floor;
 	void		*wall;
+	void		*loki;
+	void		*door;
+	void		*door_o;
 	int			size;
 	int			flag;
 	int			pos_x;
 	int			pos_y;
+	int			pos_d_x;
+	int			pos_d_y;
+	int			move;
 	t_list_c	*map;
 }	t_img;
 

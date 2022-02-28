@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/28 17:30:08 by swautele          #+#    #+#             */
+/*   Updated: 2022/02/28 17:34:12 by swautele         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 int	ft_authorized(t_img *sprite, char str)
 {
 	t_list_c	*read;
 
-	printf("%d\n", sprite->flag);
 	read = sprite->map;
 	if (str == DIR_UP)
 	{

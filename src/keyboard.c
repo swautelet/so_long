@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   keyboard.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/28 17:31:31 by swautele          #+#    #+#             */
+/*   Updated: 2022/02/28 18:01:43 by swautele         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 int	keyplan(int keycode, t_img *sprite)
@@ -12,7 +24,7 @@ int	keyplan(int keycode, t_img *sprite)
 		move_down(sprite);
 	if (keycode == 2)
 		move_right(sprite);
-	return(0);
+	return (0);
 }
 
 int	ft_exit(t_list_c *map)
@@ -26,8 +38,18 @@ void	move_up(t_img *sprite)
 	if (ft_authorized(sprite, DIR_UP) == 0)
 	{
 		mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y)
+			mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
 		sprite->pos_y--;
 		mlx_put_image_to_window(sprite->video, sprite->win, sprite->player, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+		sprite->move++;
+		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y && sprite->flag == 0)
+		{
+			printf("you won in %dmoves GG\n", sprite->move);
+			ft_exit(sprite->map);
+		}
+		else
+			printf("you moved %d times\n", sprite->move);
 	}
 }
 
@@ -36,8 +58,18 @@ void	move_left(t_img *sprite)
 	if (ft_authorized(sprite, DIR_LEFT) == 0)
 	{
 		mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y)
+			mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
 		sprite->pos_x--;
 		mlx_put_image_to_window(sprite->video, sprite->win, sprite->player, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+		sprite->move++;
+		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y && sprite->flag == 0)
+		{
+			printf("you won in %dmoves GG\n", sprite->move);
+			ft_exit(sprite->map);
+		}
+		else
+			printf("you moved %d times\n", sprite->move);
 	}
 }
 
@@ -46,8 +78,18 @@ void	move_down(t_img *sprite)
 	if (ft_authorized(sprite, DIR_DOWN) == 0)
 	{
 		mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y)
+			mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
 		sprite->pos_y++;
 		mlx_put_image_to_window(sprite->video, sprite->win, sprite->player, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+		sprite->move++;
+		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y && sprite->flag == 0)
+		{
+			printf("you won in %dmoves GG\n", sprite->move);
+			ft_exit(sprite->map);
+		}
+		else
+			printf("you moved %d times\n", sprite->move);
 	}
 }
 
@@ -56,7 +98,18 @@ void	move_right(t_img *sprite)
 	if (ft_authorized(sprite, DIR_RIGHT) == 0)
 	{
 		mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y)
+			mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
 		sprite->pos_x++;
 		mlx_put_image_to_window(sprite->video, sprite->win, sprite->player, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+		sprite->move++;
+		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y && sprite->flag == 0)
+		{
+			printf("you won in %dmoves GG\n", sprite->move);
+			ft_exit(sprite->map);
+		}
+		else
+			printf("you moved %d times\n", sprite->move);
+		
 	}
 }

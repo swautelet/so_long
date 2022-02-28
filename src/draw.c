@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:33:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/28 16:52:36 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/28 17:56:23 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,15 @@ int	init_sprite(t_list_c *map)
 	sprite->leash = mlx_xpm_file_to_image(sprite->video, "./sprite/leash_.xpm", &sprite->size, &sprite->size);
 	sprite->collar = mlx_xpm_file_to_image(sprite->video, "./sprite/collar_.xpm", &sprite->size, &sprite->size);
 	sprite->boot = mlx_xpm_file_to_image(sprite->video, "./sprite/boot_.xpm", &sprite->size, &sprite->size);
-	sprite->poopbag = mlx_xpm_file_to_image(sprite->video, "./sprite/poopbag_.xpm", &sprite->size, &sprite->size);
+	sprite->poopbag = mlx_xpm_file_to_image(sprite->video, "./sprite/poopbag.xpm", &sprite->size, &sprite->size);
 	sprite->key = mlx_xpm_file_to_image(sprite->video, "./sprite/key_.xpm", &sprite->size, &sprite->size);
 	sprite->player = mlx_xpm_file_to_image(sprite->video, "./sprite/player.xpm", &sprite->size, &sprite->size);
-	sprite->floor = mlx_xpm_file_to_image(sprite->video, "./sprite/floor.xpm", &sprite->size, &sprite->size);
+	sprite->loki = mlx_xpm_file_to_image(sprite->video, "./sprite/loki.xpm", &sprite->size, &sprite->size);
+	sprite->door = mlx_xpm_file_to_image(sprite->video, "./sprite/door.xpm", &sprite->size, &sprite->size);
+	sprite->door_o = mlx_xpm_file_to_image(sprite->video, "./sprite/door_o.xpm", &sprite->size, &sprite->size);
 	sprite->wall = mlx_xpm_file_to_image(sprite->video, "./sprite/wall_a.xpm", &sprite->size, &sprite->size);
+	sprite->floor = mlx_xpm_file_to_image(sprite->video, "./sprite/floor.xpm", &sprite->size, &sprite->size);
+	sprite->move = 0;
 	return (draw(map, sprite));
 }
 
@@ -55,13 +59,19 @@ int	draw(t_list_c *map, t_img *sprite)
 		{
 			if (map->content[i] == '1')
 				mlx_put_image_to_window(sprite->video, sprite->win, sprite->wall, 64 * i, 64 * j);
-			if (map->content[i] == '0' || map->content[i] == 'C' || map->content[i] == 'P'|| map->content[i] == 'E')
+			if (map->content[i] == '0' || map->content[i] == 'C' || map->content[i] == 'P' || map->content[i] == 'E')
 				mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, 64 * i, 64 * j);
 			if (map->content[i] == 'P')
 			{
 				sprite->pos_x = i;
 				sprite->pos_y = j;
 				mlx_put_image_to_window(sprite->video, sprite->win, sprite->player, 64 * i, 64 * j);
+			}
+			if (map->content[i] == 'E')
+			{
+				sprite->pos_d_x = i;
+				sprite->pos_d_y = j;
+				mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, 64 * i, 64 * j);
 			}
 			if (map->content[i] == 'C' && sprite->flag == 0)
 			{

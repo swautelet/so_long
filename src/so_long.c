@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:30 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/28 15:59:05 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/28 17:37:24 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,6 @@ int	main(int argc, char **argv)
 		return (-1);
 	}
 	next = map;
-	printf("%d	%s", next->line, next->content);
-	while (next->next)
-	{
-		next = next->next;
-		printf("%d	%s", next->line, next->content);
-	}
 	init_sprite(map);
 	ft_lstclear_c(&map, &free);
 	return (0);
