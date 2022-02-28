@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/24 16:24:22 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/28 21:36:35 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,10 @@ int	map_error(t_list_c *map)
 	size_t	len;
 	size_t	height;
 	int		i;
+	int		player;
 
 	i = 0;
+	player = 0;
 	len = ft_strlen(map->content);
 	while (map->content[i] != '\n')
 	{
@@ -56,6 +58,13 @@ int	map_error(t_list_c *map)
 	while (map->next != NULL)
 	{
 		map = map->next;
+		i = 0;
+		while(map->content[i] != '\n')
+		{
+			if (map->content[i] == 'P')
+				player++;
+			i++;
+		}
 		if (ft_strlen(map->content) != len)
 		{
 			printf("error\nthe map is not a rectangle");
@@ -81,6 +90,11 @@ int	map_error(t_list_c *map)
 	if (len < 3 || height < 3)
 	{
 		printf("error\nthe map is too short");
+		return (-1);
+	}
+	if (player != 1)
+	{
+		printf("error\nthere is not the right number of player%d", player);
 		return (-1);
 	}
 	return (0);
