@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:33:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/28 17:56:23 by swautele         ###   ########.fr       */
+/*   Updated: 2022/02/28 20:33:29 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,25 +75,30 @@ int	draw(t_list_c *map, t_img *sprite)
 			}
 			if (map->content[i] == 'C' && sprite->flag == 0)
 			{
-				mlx_put_image_to_window(sprite->video, sprite->win, sprite->boot, 64 * i, 64 * j);
+				mlx_put_image_to_window(sprite->video, sprite->win, sprite->loki, 64 * i, 64 * j);
 				sprite->flag++;
 			}
 			else if (map->content[i] == 'C' && sprite->flag == 1)
 			{
-				mlx_put_image_to_window(sprite->video, sprite->win, sprite->collar, 64 * i, 64 * j);
+				mlx_put_image_to_window(sprite->video, sprite->win, sprite->boot, 64 * i, 64 * j);
 				sprite->flag++;
 			}
 			else if (map->content[i] == 'C' && sprite->flag == 2)
 			{
-				mlx_put_image_to_window(sprite->video, sprite->win, sprite->leash, 64 * i, 64 * j);
+				mlx_put_image_to_window(sprite->video, sprite->win, sprite->collar, 64 * i, 64 * j);
 				sprite->flag++;
 			}
 			else if (map->content[i] == 'C' && sprite->flag == 3)
 			{
+				mlx_put_image_to_window(sprite->video, sprite->win, sprite->leash, 64 * i, 64 * j);
+				sprite->flag++;
+			}
+			else if (map->content[i] == 'C' && sprite->flag == 4)
+			{
 				mlx_put_image_to_window(sprite->video, sprite->win, sprite->poopbag, 64 * i, 64 * j);
 				sprite->flag++;
 			}
-			else if (map->content[i] == 'C' && sprite->flag >= 4)
+			else if (map->content[i] == 'C' && sprite->flag >= 5)
 			{
 				mlx_put_image_to_window(sprite->video, sprite->win, sprite->key, 64 * i, 64 * j);
 				sprite->flag++;
