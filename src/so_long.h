@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+        */
+/*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:04:20 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/27 19:10:55 by simonwautel      ###   ########.fr       */
+/*   Updated: 2022/02/28 16:37:19 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,14 @@
 #  define BUFFER_SIZE 1000
 # endif
 
+enum e_dir
+{
+	DIR_UP = '0',
+	DIR_DOWN = '1',
+	DIR_LEFT = '2',
+	DIR_RIGHT = '3'
+};
+
 typedef struct s_img{
 	void		*poopbag;
 	void		*key;
@@ -44,6 +52,7 @@ typedef struct s_img{
 	int			pos_y;
 	t_list_c	*map;
 }	t_img;
+
 int			ft_error(int argc, char **argv);
 t_list_c	*map_reader(char *name);
 char		**map_translate(int const len, int const height, char *name);

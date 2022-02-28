@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+        */
+/*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:33:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/27 18:49:16 by simonwautel      ###   ########.fr       */
+/*   Updated: 2022/02/28 16:52:36 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int	draw(t_list_c *map, t_img *sprite)
 
 	i = 0;
 	j = 0;
+	sprite->map = map;
 	while (i < ft_strlen(map->content) - 1)
 	{
 		mlx_put_image_to_window(sprite->video, sprite->win, sprite->wall, sprite->size * i, sprite->size * j);
@@ -82,13 +83,14 @@ int	draw(t_list_c *map, t_img *sprite)
 				mlx_put_image_to_window(sprite->video, sprite->win, sprite->poopbag, 64 * i, 64 * j);
 				sprite->flag++;
 			}
-			else if (map->content[i] == 'C' && sprite->flag == 4)
+			else if (map->content[i] == 'C' && sprite->flag >= 4)
+			{
 				mlx_put_image_to_window(sprite->video, sprite->win, sprite->key, 64 * i, 64 * j);
+				sprite->flag++;
+			}
 			i++;
 		}
 	}
-	sprite->map = map;
-	printf("%p", sprite);
 	mlx_hook(sprite->win, 02, 1L<<0, keyplan, sprite);
 	mlx_hook(sprite->win, 17, 1L<<5, ft_exit, map);
 	mlx_loop(sprite->video);
