@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:04:20 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/01 16:08:08 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/01 18:00:10 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,19 @@
 # include <stdlib.h>
 # include <limits.h>
 # include <stdio.h>
+# include <time.h>
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1000
 # endif
 
+# define ANIM_WAIT 50000
+
 enum e_dir
 {
 	DIR_UP = '0',
-	DIR_DOWN = '1',
-	DIR_LEFT = '2',
-	DIR_RIGHT = '3'
+	DIR_DOWN,
+	DIR_LEFT,
+	DIR_RIGHT
 };
 
 typedef struct s_img{
@@ -52,7 +55,7 @@ typedef struct s_img{
 	void		*player_b;
 	void		*player_b1;
 	void		*player_b2;
-	void		*player_f;
+	void		*player_f2;
 	void		*player_f1;
 	void		*player_l;
 	void		*player_l1;

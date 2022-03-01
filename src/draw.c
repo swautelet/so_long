@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:33:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/01 16:10:08 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/01 17:12:02 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	init_sprite(t_list_c *map)
 	sprite->player_b = mlx_xpm_file_to_image(sprite->video, "./sprite/player_b.xpm", &sprite->size, &sprite->size);
 	sprite->player_b1 = mlx_xpm_file_to_image(sprite->video, "./sprite/player_b1.xpm", &sprite->size, &sprite->size);
 	sprite->player_b2 = mlx_xpm_file_to_image(sprite->video, "./sprite/player_b2.xpm", &sprite->size, &sprite->size);
-	sprite->player_f = mlx_xpm_file_to_image(sprite->video, "./sprite/player_f.xpm", &sprite->size, &sprite->size);
+	sprite->player_f2 = mlx_xpm_file_to_image(sprite->video, "./sprite/player_f2.xpm", &sprite->size, &sprite->size);
 	sprite->player_f1 = mlx_xpm_file_to_image(sprite->video, "./sprite/player_f1.xpm", &sprite->size, &sprite->size);
 	sprite->player_l = mlx_xpm_file_to_image(sprite->video, "./sprite/player_l.xpm", &sprite->size, &sprite->size);
 	sprite->player_l1 = mlx_xpm_file_to_image(sprite->video, "./sprite/player_l1.xpm", &sprite->size, &sprite->size);
