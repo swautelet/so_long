@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+         #
+#    By: swautele <swautele@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 19:32:53 by swautele          #+#    #+#              #
-#    Updated: 2022/02/28 15:31:59 by simonwautel      ###   ########.fr        #
+#    Updated: 2022/03/01 15:11:06 by swautele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,8 +54,8 @@ fclean : clean
 re : fclean all
 
 save : fclean
-	git add $(FILES) $(MAPS) libft/* Makefile $(HEADER) $(SPRITE)
+	git add $(FILES) $(MAPS) ./libft Makefile $(HEADER) $(SPRITE)
 	git commit -m autosave
 	git push https://github.com/swautelet/so_long.git
 
-.phony : $(NAME) clean re test all lib
+.phony : $(NAME) clean re test all lib fclean
