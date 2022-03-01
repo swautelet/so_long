@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:31:31 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/28 20:35:13 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/01 15:49:42 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 int	keyplan(int keycode, t_img *sprite)
 {
-	if (sprite->flag == 0)
-	{
-		mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_d_x * sprite->size, sprite->pos_d_y * sprite->size);
-		mlx_put_image_to_window(sprite->video, sprite->win, sprite->door_o, sprite->pos_d_x * sprite->size, sprite->pos_d_y * sprite->size);
-	}
 	if (keycode == 53)
 		ft_exit(sprite->map);
 	if (keycode == 13 && sprite->pos_y > 1)

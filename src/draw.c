@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:33:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/28 20:33:29 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/01 15:48:57 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@ int	init_sprite(t_list_c *map)
 	sprite->flag = 0;
 	sprite->video = mlx_init();
 	sprite->win = mlx_new_window(sprite->video, (ft_strlen(map->content) - 1) * sprite->size, ft_lstsize_c(map) * sprite->size, "so_long");
-	sprite->leash = mlx_xpm_file_to_image(sprite->video, "./sprite/leash_.xpm", &sprite->size, &sprite->size);
-	sprite->collar = mlx_xpm_file_to_image(sprite->video, "./sprite/collar_.xpm", &sprite->size, &sprite->size);
-	sprite->boot = mlx_xpm_file_to_image(sprite->video, "./sprite/boot_.xpm", &sprite->size, &sprite->size);
+	sprite->leash = mlx_xpm_file_to_image(sprite->video, "./sprite/leash.xpm", &sprite->size, &sprite->size);
+	sprite->collar = mlx_xpm_file_to_image(sprite->video, "./sprite/collar.xpm", &sprite->size, &sprite->size);
+	sprite->boot = mlx_xpm_file_to_image(sprite->video, "./sprite/boot.xpm", &sprite->size, &sprite->size);
 	sprite->poopbag = mlx_xpm_file_to_image(sprite->video, "./sprite/poopbag.xpm", &sprite->size, &sprite->size);
-	sprite->key = mlx_xpm_file_to_image(sprite->video, "./sprite/key_.xpm", &sprite->size, &sprite->size);
+	sprite->key = mlx_xpm_file_to_image(sprite->video, "./sprite/key.xpm", &sprite->size, &sprite->size);
 	sprite->player = mlx_xpm_file_to_image(sprite->video, "./sprite/player.xpm", &sprite->size, &sprite->size);
 	sprite->loki = mlx_xpm_file_to_image(sprite->video, "./sprite/loki.xpm", &sprite->size, &sprite->size);
 	sprite->door = mlx_xpm_file_to_image(sprite->video, "./sprite/door.xpm", &sprite->size, &sprite->size);
 	sprite->door_o = mlx_xpm_file_to_image(sprite->video, "./sprite/door_o.xpm", &sprite->size, &sprite->size);
-	sprite->wall = mlx_xpm_file_to_image(sprite->video, "./sprite/wall_a.xpm", &sprite->size, &sprite->size);
+	sprite->wall = mlx_xpm_file_to_image(sprite->video, "./sprite/wall.xpm", &sprite->size, &sprite->size);
 	sprite->floor = mlx_xpm_file_to_image(sprite->video, "./sprite/floor.xpm", &sprite->size, &sprite->size);
 	sprite->move = 0;
 	return (draw(map, sprite));
