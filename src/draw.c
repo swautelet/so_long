@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:33:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/01 16:06:41 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/01 16:08:37 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,20 @@ int	init_sprite(t_list_c *map)
 	sprite->loki = mlx_xpm_file_to_image(sprite->video, "./sprite/loki.xpm", &sprite->size, &sprite->size);
 	sprite->door = mlx_xpm_file_to_image(sprite->video, "./sprite/door.xpm", &sprite->size, &sprite->size);
 	sprite->door_o = mlx_xpm_file_to_image(sprite->video, "./sprite/door_o.xpm", &sprite->size, &sprite->size);
+	sprite->opal = mlx_xpm_file_to_image(sprite->video, "./sprite/opal.xpm", &sprite->size, &sprite->size);
+	sprite->player_b = mlx_xpm_file_to_image(sprite->video, "./sprite/player_b.xpm", &sprite->size, &sprite->size);
+	sprite->player_b1 = mlx_xpm_file_to_image(sprite->video, "./sprite/player_b1.xpm", &sprite->size, &sprite->size);
+	sprite->player_b2 = mlx_xpm_file_to_image(sprite->video, "./sprite/player_b2.xpm", &sprite->size, &sprite->size);
+	sprite->player_f = mlx_xpm_file_to_image(sprite->video, "./sprite/player_f.xpm", &sprite->size, &sprite->size);
+	sprite->player_f1 = mlx_xpm_file_to_image(sprite->video, "./sprite/player_f1.xpm", &sprite->size, &sprite->size);
+	sprite->player_l = mlx_xpm_file_to_image(sprite->video, "./sprite/player_l.xpm", &sprite->size, &sprite->size);
+	sprite->player_l1 = mlx_xpm_file_to_image(sprite->video, "./sprite/player_l1.xpm", &sprite->size, &sprite->size);
+	sprite->player_p_b = mlx_xpm_file_to_image(sprite->video, "./sprite/player_p_b.xpm", &sprite->size, &sprite->size);
+	sprite->player_p_f = mlx_xpm_file_to_image(sprite->video, "./sprite/player_p_f.xpm", &sprite->size, &sprite->size);
+	sprite->player_p_r = mlx_xpm_file_to_image(sprite->video, "./sprite/player_p_r.xpm", &sprite->size, &sprite->size);
+	sprite->player_p_l = mlx_xpm_file_to_image(sprite->video, "./sprite/player_p_l.xpm", &sprite->size, &sprite->size);
+	sprite->player_r = mlx_xpm_file_to_image(sprite->video, "./sprite/player_r.xpm", &sprite->size, &sprite->size);
+	sprite->player_r1 = mlx_xpm_file_to_image(sprite->video, "./sprite/player_r1.xpm", &sprite->size, &sprite->size);
 	sprite->wall = mlx_xpm_file_to_image(sprite->video, "./sprite/wall.xpm", &sprite->size, &sprite->size);
 	sprite->floor = mlx_xpm_file_to_image(sprite->video, "./sprite/floor.xpm", &sprite->size, &sprite->size);
 	sprite->move = 0;
