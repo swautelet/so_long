@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:31:31 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/01 15:49:42 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/01 16:06:22 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	keyplan(int keycode, t_img *sprite)
 {
 	if (keycode == 53)
-		ft_exit(sprite->map);
+		ft_exit(sprite);
 	if (keycode == 13 && sprite->pos_y > 1)
 		move_up(sprite);
 	if (keycode == 0 && sprite->pos_x > 0)
@@ -27,9 +27,10 @@ int	keyplan(int keycode, t_img *sprite)
 	return (0);
 }
 
-int	ft_exit(t_list_c *map)
+int	ft_exit(t_img *sprite)
 {
-	ft_lstclear_c(&map, free);
+	ft_lstclear_c(&sprite->map, free);
+	free(sprite);
 	exit(0);
 }
 
@@ -46,7 +47,7 @@ void	move_up(t_img *sprite)
 		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y && sprite->flag == 0)
 		{
 			printf("you won in %dmoves GG\n", sprite->move);
-			ft_exit(sprite->map);
+			ft_exit(sprite);
 		}
 		else
 			printf("you moved %d times\n", sprite->move);
@@ -66,7 +67,7 @@ void	move_left(t_img *sprite)
 		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y && sprite->flag == 0)
 		{
 			printf("you won in %dmoves GG\n", sprite->move);
-			ft_exit(sprite->map);
+			ft_exit(sprite);
 		}
 		else
 			printf("you moved %d times\n", sprite->move);
@@ -86,7 +87,7 @@ void	move_down(t_img *sprite)
 		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y && sprite->flag == 0)
 		{
 			printf("you won in %dmoves GG\n", sprite->move);
-			ft_exit(sprite->map);
+			ft_exit(sprite);
 		}
 		else
 			printf("you moved %d times\n", sprite->move);
@@ -106,7 +107,7 @@ void	move_right(t_img *sprite)
 		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y && sprite->flag == 0)
 		{
 			printf("you won in %dmoves GG\n", sprite->move);
-			ft_exit(sprite->map);
+			ft_exit(sprite);
 		}
 		else
 			printf("you moved %d times\n", sprite->move);
