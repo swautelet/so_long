@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:31:31 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/02 19:10:49 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/02 19:12:24 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	ft_exit(t_img *sprite)
 
 void	move_up(t_img *sprite)
 {
-	int check;
+	int	check;
 
 	check = ft_authorized(sprite, DIR_UP);
 	if (check == 0)
@@ -87,7 +87,7 @@ void	move_up(t_img *sprite)
 
 void	move_left(t_img *sprite)
 {
-	int check;
+	int	check;
 
 	check = ft_authorized(sprite, DIR_LEFT);
 	if (check == 0)
@@ -111,7 +111,7 @@ void	move_left(t_img *sprite)
 
 void	move_down(t_img *sprite)
 {
-	int check;
+	int	check;
 
 	check = ft_authorized(sprite, DIR_DOWN);
 	if (check == 0)
@@ -136,7 +136,7 @@ void	move_down(t_img *sprite)
 
 void	move_right(t_img *sprite)
 {
-	int check;
+	int	check;
 
 	check = ft_authorized(sprite, DIR_RIGHT);
 	if (check == 0)

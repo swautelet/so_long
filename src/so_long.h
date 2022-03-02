@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:04:20 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/02 18:17:58 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/02 19:28:37 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1000
 # endif
-
+# define MASQUE 1L<<0
+# define MASQUE1 1L<<5
 # define ANIM_WAIT 250000
 
 enum e_dir
@@ -79,7 +80,14 @@ typedef struct s_img{
 	char		dir;
 	t_list_c	*map;
 }	t_img;
-
+typedef struct s_check{
+	size_t	len;
+	size_t	height;
+	int		i;
+	int		player;
+	int		exit;
+	int		collectible;
+}	t_check;
 int			ft_error(int argc, char **argv);
 t_list_c	*map_reader(char *name);
 char		**map_translate(int const len, int const height, char *name);
@@ -89,7 +97,8 @@ size_t		ft_strlengnl(char *str);
 int			ft_end_of_line(char *str);
 char		*ft_initialize(char *buffer);
 char		*gnl(char *result, char *buffer, int size, int fd);
-void		ft_straddback2(char *newresult, char *buffer, ssize_t i, ssize_t size);
+void		ft_straddback2(char *newresult, char *buffer, \
+	ssize_t i, ssize_t size);
 int			map_error(t_list_c *map);
 int			draw(t_list_c *map, t_img *sprite);
 int			init_sprite(t_list_c *map);
