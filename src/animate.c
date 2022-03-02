@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   animate.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:11:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/02 19:23:45 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/02 21:20:20 by simonwautel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	animate(t_img *sprite)
 		sprite->move++;
 		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y && sprite->flag == 0)
 		{
-			printf("you won in %dmoves GG\n", sprite->move);
+			printf("You won in %d moves GG.\nYou can walk Loki now.\n", sprite->move);
 			ft_exit(sprite);
 		}
 		else
@@ -55,7 +55,7 @@ int	animate(t_img *sprite)
 		sprite->move++;
 		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y && sprite->flag == 0)
 		{
-			printf("you won in %dmoves GG\n", sprite->move);
+			printf("You won in %d moves GG.\nYou can walk Loki now.\n", sprite->move);
 			ft_exit(sprite);
 		}
 		else
@@ -76,7 +76,7 @@ int	animate(t_img *sprite)
 		sprite->move++;
 		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y && sprite->flag == 0)
 		{
-			printf("you won in %dmoves GG\n", sprite->move);
+			printf("You won in %d moves GG.\nYou can walk Loki now.\n", sprite->move);
 			ft_exit(sprite);
 		}
 		else
@@ -103,7 +103,7 @@ int	animate(t_img *sprite)
 		sprite->move++;
 		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y && sprite->flag == 0)
 		{
-			printf("you won in %dmoves GG\n", sprite->move);
+			printf("You won in %d moves GG.\nYou can walk Loki now.\n", sprite->move);
 			ft_exit(sprite);
 		}
 		else

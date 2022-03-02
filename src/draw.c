@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:33:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/02 19:59:42 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/02 21:17:25 by simonwautel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,12 +115,12 @@ int	draw(t_list *map, t_img *sprite)
 			}
 			else if (map->content[i] == 'C' && sprite->flag == 4)
 			{
-				mlx_put_image_to_window(sprite->video, sprite->win, sprite->poopbag, 64 * i, 64 * j);
+				mlx_put_image_to_window(sprite->video, sprite->win, sprite->key, 64 * i, 64 * j);
 				sprite->flag++;
 			}
 			else if (map->content[i] == 'C' && sprite->flag >= 5)
 			{
-				mlx_put_image_to_window(sprite->video, sprite->win, sprite->key, 64 * i, 64 * j);
+				mlx_put_image_to_window(sprite->video, sprite->win, sprite->poopbag, 64 * i, 64 * j);
 				sprite->flag++;
 			}
 			i++;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
+/*   By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:30:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/02 19:58:32 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/02 21:20:42 by simonwautel      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_authorized(t_img *sprite, char str)
 			}
 			if (read->content[sprite->pos_x] == 'N')
 			{
-				printf("you lost opal killed you \n");
+				printf("You lost. Opal killed you.\n");
 				ft_exit(sprite);
 			}
 			return (0);
@@ -63,7 +63,7 @@ int	ft_authorized(t_img *sprite, char str)
 			}
 			if (read->content[sprite->pos_x - 1] == 'N')
 			{
-				printf("you lost opal killed you \n");
+				printf("You lost. Opal killed you.\n");
 				ft_exit(sprite);
 			}
 			return (0);
@@ -88,7 +88,7 @@ int	ft_authorized(t_img *sprite, char str)
 			}
 			if (read->content[sprite->pos_x] == 'N')
 			{
-				printf("you lost opal killed you \n");
+				printf("You lost. Opal killed you.\n");
 				ft_exit(sprite);
 			}
 			return (0);
@@ -113,7 +113,7 @@ int	ft_authorized(t_img *sprite, char str)
 			}
 			if (read->content[sprite->pos_x + 1] == 'N')
 			{
-				printf("you lost opal killed you \n");
+				printf("You lost. Opal killed you.\n");
 				ft_exit(sprite);
 			}
 			return (0);
