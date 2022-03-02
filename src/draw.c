@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:33:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/02 16:57:29 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/02 18:09:31 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	draw(t_list_c *map, t_img *sprite)
 		{
 			if (map->content[i] == '1')
 				mlx_put_image_to_window(sprite->video, sprite->win, sprite->wall, 64 * i, 64 * j);
-			if (map->content[i] == '0' || map->content[i] == 'C' || map->content[i] == 'P' || map->content[i] == 'E')
+			if (map->content[i] == '0' || map->content[i] == 'C' || map->content[i] == 'P' || map->content[i] == 'E' || map->content[i] == 'N')
 				mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, 64 * i, 64 * j);
 			if (map->content[i] == 'P')
 			{
@@ -87,6 +87,10 @@ int	draw(t_list_c *map, t_img *sprite)
 				sprite->pos_d_x = i;
 				sprite->pos_d_y = j;
 				mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, 64 * i, 64 * j);
+			}
+			if (map->content[i] == 'N')
+			{
+				mlx_put_image_to_window(sprite->video, sprite->win, sprite->opal, 64 * i, 64 * j);
 			}
 			if (map->content[i] == 'C' && sprite->flag == 0)
 			{
