@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/02 18:05:59 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/02 18:31:35 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,12 @@ int	map_error(t_list_c *map)
 	int		i;
 	int		player;
 	int		exit;
+	int		collectible;
 
 	i = 0;
 	exit = 0;
 	player = 0;
+	collectible = 0;
 	len = ft_strlen(map->content);
 	while (map->content[i] != '\n')
 	{
@@ -72,6 +74,13 @@ int	map_error(t_list_c *map)
 		{
 			if (map->content[i] == 'E')
 				exit++;
+			i++;
+		}
+		i = 0;
+		while(map->content[i] != '\n')
+		{
+			if (map->content[i] == 'C')
+				collectible++;
 			i++;
 		}
 		if (ft_strlen(map->content) != len)
@@ -109,6 +118,11 @@ int	map_error(t_list_c *map)
 	if (exit != 1)
 	{
 		printf("error\nthere is %d exit there should be only one", exit);
+		return (-1);
+	}
+	if (collectible == 0)
+	{
+		printf("error\nthere is no collectible");
 		return (-1);
 	}
 	return (0);
