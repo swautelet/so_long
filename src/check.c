@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:30:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/02 18:12:46 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/02 18:20:46 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,4 +116,10 @@ int	ft_authorized(t_img *sprite, char str)
 		}
 	}
 	return (1);
+}
+
+void	printmove(t_img *sprite)
+{
+	mlx_put_image_to_window(sprite->video, sprite->win, sprite->wall, 0 * 64, 0 * 64);
+	mlx_string_put(sprite->video, sprite->win, 10, 30, 0x000000, ft_itoa(sprite->move));
 }

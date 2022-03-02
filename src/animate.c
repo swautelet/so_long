@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:11:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/02 17:12:51 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/02 18:21:37 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	animate(t_img *sprite)
 			ft_exit(sprite);
 		}
 		else
-			printf("you moved %d times\n", sprite->move);
+			printmove(sprite);
 		sprite->dir = PAUSE;
 	}
 	else if (sprite->dir == DIR_DOWN)
@@ -56,7 +56,7 @@ int	animate(t_img *sprite)
 			ft_exit(sprite);
 		}
 		else
-			printf("you moved %d times\n", sprite->move);
+			printmove(sprite);
 		sprite->dir = PAUSE;
 	}
 	else if (sprite->dir == DIR_LEFT)
@@ -74,7 +74,7 @@ int	animate(t_img *sprite)
 			ft_exit(sprite);
 		}
 		else
-			printf("you moved %d times\n", sprite->move);
+			printmove(sprite);
 		sprite->dir = PAUSE;
 	}
 	else if (sprite->dir == DIR_UP)
@@ -101,7 +101,7 @@ int	animate(t_img *sprite)
 			ft_exit(sprite);
 		}
 		else
-			printf("you moved %d times\n", sprite->move);
+			printmove(sprite);
 		sprite->dir = PAUSE;
 	}
 	return (0);

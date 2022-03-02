@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:04:20 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/02 17:15:31 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/02 18:17:58 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,6 @@ void		move_right(t_img *sprite);
 int			ft_authorized(t_img *sprite, char str);
 int			timer(t_img *sprite);
 int			animate(t_img *sprite);
+void		printmove(t_img *sprite);
 
 #endif
