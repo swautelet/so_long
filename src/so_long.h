@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:04:20 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/02 15:52:00 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/02 17:02:07 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,17 @@
 #  define BUFFER_SIZE 1000
 # endif
 
-# define ANIM_WAIT 50000
+# define ANIM_WAIT 100000
 
 enum e_dir
 {
 	DIR_UP = '0',
+	DIR_UP2,
 	DIR_DOWN,
+	DIR_DOWN2,
 	DIR_LEFT,
-	DIR_RIGHT
+	DIR_RIGHT,
+	PAUSE,
 };
 
 typedef struct s_img{
@@ -98,5 +101,6 @@ void		move_down(t_img *sprite);
 void		move_right(t_img *sprite);
 int			ft_authorized(t_img *sprite, char str);
 int			timer(t_img *sprite);
+int			animate(t_img *sprite);
 
 #endif

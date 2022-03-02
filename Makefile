@@ -6,7 +6,7 @@
 #    By: swautele <swautele@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 19:32:53 by swautele          #+#    #+#              #
-#    Updated: 2022/03/01 15:11:06 by swautele         ###   ########.fr        #
+#    Updated: 2022/03/02 17:00:52 by swautele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ FILES = src/so_long.c \
 		src/get_next_line.c \
 		src/get_next_line_utils.c \
 		src/keyboard.c \
-		src/check.c
+		src/check.c \
+		src/animate.c
 LIBFT = libft/libft.a
 OBJECT = $(FILES:.c=.o)
 MAP = map/map_test.ber
