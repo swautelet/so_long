@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:31:31 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/02 17:13:07 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/02 17:49:24 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,32 @@ int	keyplan(int keycode, t_img *sprite)
 int	ft_exit(t_img *sprite)
 {
 	ft_lstclear_c(&sprite->map, free);
+	mlx_destroy_image(sprite->video, sprite->leash);
+	mlx_destroy_image(sprite->video, sprite->collar);
+	mlx_destroy_image(sprite->video, sprite->boot);
+	mlx_destroy_image(sprite->video, sprite->poopbag);
+	mlx_destroy_image(sprite->video, sprite->key);
+	mlx_destroy_image(sprite->video, sprite->player);
+	mlx_destroy_image(sprite->video, sprite->loki);
+	mlx_destroy_image(sprite->video, sprite->door);
+	mlx_destroy_image(sprite->video, sprite->door_o);
+	mlx_destroy_image(sprite->video, sprite->opal);
+	mlx_destroy_image(sprite->video, sprite->player_b);
+	mlx_destroy_image(sprite->video, sprite->player_b1);
+	mlx_destroy_image(sprite->video, sprite->player_b2);
+	mlx_destroy_image(sprite->video, sprite->player_f2);
+	mlx_destroy_image(sprite->video, sprite->player_f1);
+	mlx_destroy_image(sprite->video, sprite->player_l);
+	mlx_destroy_image(sprite->video, sprite->player_l1);
+	mlx_destroy_image(sprite->video, sprite->player_p_b);
+	mlx_destroy_image(sprite->video, sprite->player_p_f);
+	mlx_destroy_image(sprite->video, sprite->player_p_r);
+	mlx_destroy_image(sprite->video, sprite->player_p_l);
+	mlx_destroy_image(sprite->video, sprite->player_r);
+	mlx_destroy_image(sprite->video, sprite->player_r1);
+	mlx_destroy_image(sprite->video, sprite->wall);
+	mlx_destroy_image(sprite->video, sprite->floor);
+	mlx_destroy_window(sprite->video, sprite->win);
 	free(sprite);
 	exit(0);
 }
