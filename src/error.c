@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/02 19:22:39 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/02 19:57:29 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_error(int argc, char **argv)
 	return (0);
 }
 
-int	map_error(t_list_c *map)
+int	map_error(t_list *map)
 {
 	t_check	check;
 

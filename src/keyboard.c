@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:31:31 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/02 19:12:24 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/02 19:58:15 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	keyplan(int keycode, t_img *sprite)
 
 int	ft_exit(t_img *sprite)
 {
-	ft_lstclear_c(&sprite->map, free);
+	ft_lstclear(&sprite->map, free);
 	mlx_destroy_image(sprite->video, sprite->leash);
 	mlx_destroy_image(sprite->video, sprite->collar);
 	mlx_destroy_image(sprite->video, sprite->boot);

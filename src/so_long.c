@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:30 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/28 17:37:24 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/02 19:54:18 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,19 @@
 
 int	main(int argc, char **argv)
 {
-	t_list_c	*map;
-	t_list_c	*next;
+	t_list	*map;
+	t_list	*next;
 
 	if (ft_error(argc, argv) == -1)
 		return (-1);
 	map = map_reader(argv[1]);
 	if (map_error(map) == -1)
 	{
-		ft_lstclear_c(&map, &free);
+		ft_lstclear(&map, &free);
 		return (-1);
 	}
 	next = map;
 	init_sprite(map);
-	ft_lstclear_c(&map, &free);
+	ft_lstclear(&map, &free);
 	return (0);
 }

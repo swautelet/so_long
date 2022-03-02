@@ -6,24 +6,24 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:02:17 by swautele          #+#    #+#             */
-/*   Updated: 2022/02/25 14:38:33 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/02 19:57:54 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-t_list_c	*map_reader(char *name)
+t_list	*map_reader(char *name)
 {
 	int			fd;
 	char		*line;
-	t_list_c	*map;
-	t_list_c	*new;
+	t_list	*map;
+	t_list	*new;
 	int			i;
 
 	i = 0;
 	fd = open(name, O_RDONLY);
 	line = get_next_line(fd);
-	map = ft_lstnew_c(line);
+	map = ft_lstnew(line);
 	map->line = i;
 	while (line)
 	{
@@ -31,14 +31,14 @@ t_list_c	*map_reader(char *name)
 		i++;
 		if (line != NULL)
 		{
-			new = ft_lstnew_c(line);
+			new = ft_lstnew(line);
 			if (new == NULL)
 			{
 				free(line);
 				return (map);
 			}
 			new->line = i;
-			ft_lstadd_back_c(&map, new);
+			ft_lstadd_back(&map, new);
 		}
 	}
 	close(fd);

@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:30:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/02 19:23:34 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/02 19:58:32 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_authorized(t_img *sprite, char str)
 {
-	t_list_c	*read;
+	t_list	*read;
 
 	read = sprite->map;
 	if (str == DIR_UP)

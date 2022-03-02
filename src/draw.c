@@ -6,13 +6,13 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:33:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/02 19:31:35 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/02 19:59:42 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	init_sprite(t_list_c *map)
+int	init_sprite(t_list *map)
 {
 	t_img	*sprite;
 
@@ -22,7 +22,7 @@ int	init_sprite(t_list_c *map)
 	sprite->size = 64;
 	sprite->flag = 0;
 	sprite->video = mlx_init();
-	sprite->win = mlx_new_window(sprite->video, (ft_strlen(map->content) - 1) * sprite->size, ft_lstsize_c(map) * sprite->size, "so_long");
+	sprite->win = mlx_new_window(sprite->video, (ft_strlen(map->content) - 1) * sprite->size, ft_lstsize(map) * sprite->size, "so_long");
 	sprite->leash = mlx_xpm_file_to_image(sprite->video, "./sprite/leash.xpm", &sprite->size, &sprite->size);
 	sprite->collar = mlx_xpm_file_to_image(sprite->video, "./sprite/collar.xpm", &sprite->size, &sprite->size);
 	sprite->boot = mlx_xpm_file_to_image(sprite->video, "./sprite/boot.xpm", &sprite->size, &sprite->size);
@@ -52,7 +52,7 @@ int	init_sprite(t_list_c *map)
 	return (draw(map, sprite));
 }
 
-int	draw(t_list_c *map, t_img *sprite)
+int	draw(t_list *map, t_img *sprite)
 {
 	size_t	i;
 	size_t	j;
@@ -65,6 +65,7 @@ int	draw(t_list_c *map, t_img *sprite)
 		mlx_put_image_to_window(sprite->video, sprite->win, sprite->wall, sprite->size * i, sprite->size * j);
 		i++;
 	}
+	mlx_string_put(sprite->video, sprite->win, 10, 30, 0x000000, ft_itoa(sprite->move));
 	while (map->next)
 	{
 		i = 0;

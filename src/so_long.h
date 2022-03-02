@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:04:20 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/02 19:31:43 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/02 19:56:43 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ typedef struct s_img{
 	int			pos_d_y;
 	int			move;
 	char		dir;
-	t_list_c	*map;
+	t_list	*map;
 }	t_img;
 typedef struct s_check{
 	size_t	len;
@@ -87,7 +87,7 @@ typedef struct s_check{
 	int		collectible;
 }	t_check;
 int			ft_error(int argc, char **argv);
-t_list_c	*map_reader(char *name);
+t_list		*map_reader(char *name);
 char		**map_translate(int const len, int const height, char *name);
 char		*get_next_line(int fd);
 char		*ft_straddback(char *result, char *buffer, ssize_t size);
@@ -97,9 +97,9 @@ char		*ft_initialize(char *buffer);
 char		*gnl(char *result, char *buffer, int size, int fd);
 void		ft_straddback2(char *newresult, char *buffer, \
 	ssize_t i, ssize_t size);
-int			map_error(t_list_c *map);
-int			draw(t_list_c *map, t_img *sprite);
-int			init_sprite(t_list_c *map);
+int			map_error(t_list *map);
+int			draw(t_list *map, t_img *sprite);
+int			init_sprite(t_list *map);
 int			keyplan(int keycode, t_img *sprite);
 int			ft_exit(t_img *sprite);
 void		move_up(t_img *sprite);
