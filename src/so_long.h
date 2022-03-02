@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:04:20 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/01 18:00:10 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/02 15:52:00 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ typedef struct s_img{
 	int			pos_d_x;
 	int			pos_d_y;
 	int			move;
+	char		dir;
 	t_list_c	*map;
 }	t_img;
 
@@ -96,5 +97,6 @@ void		move_left(t_img *sprite);
 void		move_down(t_img *sprite);
 void		move_right(t_img *sprite);
 int			ft_authorized(t_img *sprite, char str);
+int			timer(t_img *sprite);
 
 #endif
