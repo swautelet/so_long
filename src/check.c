@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:30:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/02 18:20:46 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/02 18:53:07 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	ft_authorized(t_img *sprite, char str)
 					mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_d_x * sprite->size, sprite->pos_d_y * sprite->size);
 					mlx_put_image_to_window(sprite->video, sprite->win, sprite->door_o, sprite->pos_d_x * sprite->size, sprite->pos_d_y * sprite->size);
 				}
+				return (2);
 			}
 			if (read->content[sprite->pos_x] == 'N')
 			{
@@ -58,6 +59,7 @@ int	ft_authorized(t_img *sprite, char str)
 					mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_d_x * sprite->size, sprite->pos_d_y * sprite->size);
 					mlx_put_image_to_window(sprite->video, sprite->win, sprite->door_o, sprite->pos_d_x * sprite->size, sprite->pos_d_y * sprite->size);
 				}
+				return (2);
 			}
 			if (read->content[sprite->pos_x - 1] == 'N')
 			{
@@ -82,6 +84,7 @@ int	ft_authorized(t_img *sprite, char str)
 					mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_d_x * sprite->size, sprite->pos_d_y * sprite->size);
 					mlx_put_image_to_window(sprite->video, sprite->win, sprite->door_o, sprite->pos_d_x * sprite->size, sprite->pos_d_y * sprite->size);
 				}
+				return (2);
 			}
 			if (read->content[sprite->pos_x] == 'N')
 			{
@@ -106,6 +109,7 @@ int	ft_authorized(t_img *sprite, char str)
 					mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_d_x * sprite->size, sprite->pos_d_y * sprite->size);
 					mlx_put_image_to_window(sprite->video, sprite->win, sprite->door_o, sprite->pos_d_x * sprite->size, sprite->pos_d_y * sprite->size);
 				}
+				return (2);
 			}
 			if (read->content[sprite->pos_x + 1] == 'N')
 			{
