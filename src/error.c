@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 20:08:03 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 20:16:15 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	map_error(t_list *map)
 			return (error_msg("error\nthere miss a wall around the map\n"));
 		check.i++;
 	}
-	check.height = 1;
+	check.height = ft_lstsize(map);
 	while (map->next != NULL)
 	{
 		map = map->next;
@@ -79,8 +79,8 @@ int	map_error(t_list *map)
 			return (error_msg("Error\nthe map is not a rectangle\n"));
 		if (map->content[0] != '1' || map->content[check.len - 2] != '1')
 			return (error_msg("Error\nthere miss a wall around the map\n"));
-		check.height++;
 	}
+	map = ft_lstlast(map);
 	check.i = 0;
 	while (map->content[check.i] != '\n')
 	{
