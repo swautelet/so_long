@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:31:31 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 16:48:23 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 16:53:45 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ void	move_up(t_img *dt)
 			mlx_put_image_to_window(dt->video, dt->win, dt->door, dt->pos_x * dt->siz, dt->pos_y * dt->siz);
 		mlx_put_image_to_window(dt->video, dt->win, dt->player_b1, dt->pos_x * dt->siz, dt->pos_y * dt->siz);
 		dt->dir = DIR_UP;
-		dt->pos_y--;
 	}
 	if (check == 2)
 	{
@@ -83,7 +82,6 @@ void	move_up(t_img *dt)
 		dt->pos_y--;
 		mlx_put_image_to_window(dt->video, dt->win, dt->player_p_b, dt->pos_x * dt->siz, dt->pos_y * dt->siz);
 		dt->dir = DIR_UP2;
-		dt->pos_y--;
 	}
 }
 
@@ -100,7 +98,6 @@ void	move_left(t_img *dt)
 		mlx_put_image_to_window(dt->video, dt->win, dt->player_l1, dt->pos_x * dt->siz, dt->pos_y * dt->siz);
 		dt->dir = DIR_LEFT;
 		dt->pos_x--;
-
 	}
 	if (check == 2)
 	{
@@ -126,7 +123,6 @@ void	move_down(t_img *dt)
 			mlx_put_image_to_window(dt->video, dt->win, dt->door, dt->pos_x * dt->siz, dt->pos_y * dt->siz);
 		mlx_put_image_to_window(dt->video, dt->win, dt->player_f1, dt->pos_x * dt->siz, dt->pos_y * dt->siz);
 		dt->dir = DIR_DOWN;
-		dt->pos_y++;
 	}
 	if (check == 2)
 	{
@@ -137,7 +133,6 @@ void	move_down(t_img *dt)
 		dt->pos_y++;
 		mlx_put_image_to_window(dt->video, dt->win, dt->player_p_f, dt->pos_x * dt->siz, dt->pos_y * dt->siz);
 		dt->dir = DIR_DOWN2;
-		dt->pos_y++;
 	}
 }
 

@@ -6,18 +6,18 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:33:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 16:22:42 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 16:50:12 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void *xpm_img(void *mlx, char *path, int *width, int *height)
+static void	*xpm_img(void *mlx, char *path, int *width, int *height)
 {
-	return(mlx_xpm_file_to_image(mlx, path, width, height));
+	return (mlx_xpm_file_to_image(mlx, path, width, height));
 }
 
-static void sub_init_sprites(t_img *dt)
+static void	sub_init_sprites(t_img *dt)
 {
 	dt->leash = xpm_img(dt->video, "./sprite/leash.xpm", &dt->siz, &dt->siz);
 	dt->collar = xpm_img(dt->video, "./sprite/collar.xpm", &dt->siz, &dt->siz);
@@ -31,7 +31,7 @@ static void sub_init_sprites(t_img *dt)
 	dt->opal = xpm_img(dt->video, "./sprite/opal.xpm", &dt->siz, &dt->siz);
 }
 
-static void sub_init_sprites_player(t_img *dt)
+static void	sub_init_sprites_player(t_img *dt)
 {
 	dt->player_b = xpm_img(dt->video, "./sprite/player_b.xpm", &dt->siz, &dt->siz);
 	dt->player_b1 = xpm_img(dt->video, "./sprite/player_b1.xpm", &dt->siz, &dt->siz);
