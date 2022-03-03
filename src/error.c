@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 20:16:15 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 20:24:15 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,21 +45,30 @@ static int	count_error(t_check check)
 	return (0);
 }
 
+static int	is_a_wall(t_list *map)
+{
+	int	i;
+
+	i = 0;
+	while (map->content[i] != '\n')
+	{
+		if (map->content[i] != '1')
+			return (error_msg("error\nthere miss a wall around the map\n"));
+		i++;
+	}
+	return (0);
+}
+
 int	map_error(t_list *map)
 {
 	t_check	check;
 
-	check.i = 0;
 	check.exit = 0;
 	check.player = 0;
 	check.collectible = 0;
 	check.len = ft_strlen(map->content);
-	while (map->content[check.i] != '\n')
-	{
-		if (map->content[check.i] != '1')
-			return (error_msg("error\nthere miss a wall around the map\n"));
-		check.i++;
-	}
+	if (is_a_wall(map) == -1)
+		return (-1);
 	check.height = ft_lstsize(map);
 	while (map->next != NULL)
 	{
@@ -80,13 +89,7 @@ int	map_error(t_list *map)
 		if (map->content[0] != '1' || map->content[check.len - 2] != '1')
 			return (error_msg("Error\nthere miss a wall around the map\n"));
 	}
-	map = ft_lstlast(map);
-	check.i = 0;
-	while (map->content[check.i] != '\n')
-	{
-		if (map->content[check.i] != '1')
-			return (error_msg("Error\nthere miss a wall around the map\n"));
-		check.i++;
-	}
+	if (is_a_wall(map) == -1)
+		return (-1);
 	return (count_error(check));
 }
