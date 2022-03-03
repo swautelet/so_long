@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 19:00:45 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 19:05:44 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 19:15:15 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	move_up(t_img *dt)
 	if (check == 0)
 	{
 		erase(dt);
-		mlx_put_image_to_window(dt->video, dt->win, dt->player_b1,
+		mlx_put_image_to_window(dt->video, dt->win, dt->pl_b1,
 			dt->pos_x * dt->siz, dt->pos_y * dt->siz);
 		dt->dir = DIR_UP;
 	}
@@ -38,7 +38,7 @@ void	move_up(t_img *dt)
 		usleep(ANIM_WAIT);
 		erase(dt);
 		dt->pos_y--;
-		mlx_put_image_to_window(dt->video, dt->win, dt->player_p_b,
+		mlx_put_image_to_window(dt->video, dt->win, dt->pl_p_b,
 			dt->pos_x * dt->siz, dt->pos_y * dt->siz);
 		dt->dir = DIR_UP2;
 	}
@@ -52,7 +52,7 @@ void	move_left(t_img *dt)
 	if (check == 0)
 	{
 		erase(dt);
-		mlx_put_image_to_window(dt->video, dt->win, dt->player_l1,
+		mlx_put_image_to_window(dt->video, dt->win, dt->pl_l1,
 			dt->pos_x * dt->siz, dt->pos_y * dt->siz);
 		dt->dir = DIR_LEFT;
 		dt->pos_x--;
@@ -61,7 +61,7 @@ void	move_left(t_img *dt)
 	{
 		usleep(ANIM_WAIT);
 		erase(dt);
-		mlx_put_image_to_window(dt->video, dt->win, dt->player_p_l,
+		mlx_put_image_to_window(dt->video, dt->win, dt->pl_p_l,
 			(dt->pos_x - 1) * 64, dt->pos_y * 64);
 		dt->dir = DIR_LEFT;
 		dt->pos_x--;
@@ -76,7 +76,7 @@ void	move_down(t_img *dt)
 	if (check == 0)
 	{
 		erase(dt);
-		mlx_put_image_to_window(dt->video, dt->win, dt->player_f1,
+		mlx_put_image_to_window(dt->video, dt->win, dt->pl_f1,
 			dt->pos_x * dt->siz, dt->pos_y * dt->siz);
 		dt->dir = DIR_DOWN;
 	}
@@ -85,7 +85,7 @@ void	move_down(t_img *dt)
 		usleep(ANIM_WAIT);
 		erase(dt);
 		dt->pos_y++;
-		mlx_put_image_to_window(dt->video, dt->win, dt->player_p_f,
+		mlx_put_image_to_window(dt->video, dt->win, dt->pl_p_f,
 			dt->pos_x * dt->siz, dt->pos_y * dt->siz);
 		dt->dir = DIR_DOWN2;
 	}
@@ -99,7 +99,7 @@ void	move_right(t_img *dt)
 	if (check == 0)
 	{
 		erase(dt);
-		mlx_put_image_to_window(dt->video, dt->win, dt->player_r1,
+		mlx_put_image_to_window(dt->video, dt->win, dt->pl_r1,
 			dt->pos_x * dt->siz, dt->pos_y * dt->siz);
 		dt->dir = DIR_RIGHT;
 		dt->pos_x++;
@@ -108,7 +108,7 @@ void	move_right(t_img *dt)
 	{
 		usleep(ANIM_WAIT);
 		erase(dt);
-		mlx_put_image_to_window(dt->video, dt->win, dt->player_p_r,
+		mlx_put_image_to_window(dt->video, dt->win, dt->pl_p_r,
 			(dt->pos_x + 1) * 64, dt->pos_y * 64);
 		dt->dir = DIR_RIGHT;
 		dt->pos_x++;

@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:33:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 17:36:18 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 19:15:23 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,35 +17,35 @@ static void	*xpm_img(void *mlx, char *path, int *width, int *height)
 	return (mlx_xpm_file_to_image(mlx, path, width, height));
 }
 
-static void	sub_init_sprites(t_img *dt)
+static void	sub_init_sprites(t_img *d)
 {
-	dt->leash = xpm_img(dt->video, "./sprite/leash.xpm", &dt->siz, &dt->siz);
-	dt->collar = xpm_img(dt->video, "./sprite/collar.xpm", &dt->siz, &dt->siz);
-	dt->boot = xpm_img(dt->video, "./sprite/boot.xpm", &dt->siz, &dt->siz);
-	dt->poopbag = xpm_img(dt->video, "./sprite/poopbag.xpm", &dt->siz, &dt->siz);
-	dt->key = xpm_img(dt->video, "./sprite/key.xpm", &dt->siz, &dt->siz);
-	dt->player = xpm_img(dt->video, "./sprite/player.xpm", &dt->siz, &dt->siz);
-	dt->loki = xpm_img(dt->video, "./sprite/loki.xpm", &dt->siz, &dt->siz);
-	dt->door = xpm_img(dt->video, "./sprite/door.xpm", &dt->siz, &dt->siz);
-	dt->door_o = xpm_img(dt->video, "./sprite/door_o.xpm", &dt->siz, &dt->siz);
-	dt->opal = xpm_img(dt->video, "./sprite/opal.xpm", &dt->siz, &dt->siz);
+	d->leash = xpm_img(d->video, "./sprite/leash.xpm", &d->siz, &d->siz);
+	d->collar = xpm_img(d->video, "./sprite/collar.xpm", &d->siz, &d->siz);
+	d->boot = xpm_img(d->video, "./sprite/boot.xpm", &d->siz, &d->siz);
+	d->poopbag = xpm_img(d->video, "./sprite/poopbag.xpm", &d->siz, &d->siz);
+	d->key = xpm_img(d->video, "./sprite/key.xpm", &d->siz, &d->siz);
+	d->player = xpm_img(d->video, "./sprite/player.xpm", &d->siz, &d->siz);
+	d->loki = xpm_img(d->video, "./sprite/loki.xpm", &d->siz, &d->siz);
+	d->door = xpm_img(d->video, "./sprite/door.xpm", &d->siz, &d->siz);
+	d->door_o = xpm_img(d->video, "./sprite/door_o.xpm", &d->siz, &d->siz);
+	d->opal = xpm_img(d->video, "./sprite/opal.xpm", &d->siz, &d->siz);
 }
 
-static void	sub_init_sprites_player(t_img *dt)
+static void	sub_init_sprites_player(t_img *d)
 {
-	dt->player_b = xpm_img(dt->video, "./sprite/player_b.xpm", &dt->siz, &dt->siz);
-	dt->player_b1 = xpm_img(dt->video, "./sprite/player_b1.xpm", &dt->siz, &dt->siz);
-	dt->player_b2 = xpm_img(dt->video, "./sprite/player_b2.xpm", &dt->siz, &dt->siz);
-	dt->player_f2 = xpm_img(dt->video, "./sprite/player_f2.xpm", &dt->siz, &dt->siz);
-	dt->player_f1 = xpm_img(dt->video, "./sprite/player_f1.xpm", &dt->siz, &dt->siz);
-	dt->player_l = xpm_img(dt->video, "./sprite/player_l.xpm", &dt->siz, &dt->siz);
-	dt->player_l1 = xpm_img(dt->video, "./sprite/player_l1.xpm", &dt->siz, &dt->siz);
-	dt->player_p_b = xpm_img(dt->video, "./sprite/player_p_b.xpm", &dt->siz, &dt->siz);
-	dt->player_p_f = xpm_img(dt->video, "./sprite/player_p_f.xpm", &dt->siz, &dt->siz);
-	dt->player_p_r = xpm_img(dt->video, "./sprite/player_p_r.xpm", &dt->siz, &dt->siz);
-	dt->player_p_l = xpm_img(dt->video, "./sprite/player_p_l.xpm", &dt->siz, &dt->siz);
-	dt->player_r = xpm_img(dt->video, "./sprite/player_r.xpm", &dt->siz, &dt->siz);
-	dt->player_r1 = xpm_img(dt->video, "./sprite/player_r1.xpm", &dt->siz, &dt->siz);
+	d->pl_b = xpm_img(d->video, "./sprite/player_b.xpm", &d->siz, &d->siz);
+	d->pl_b1 = xpm_img(d->video, "./sprite/player_b1.xpm", &d->siz, &d->siz);
+	d->pl_b2 = xpm_img(d->video, "./sprite/player_b2.xpm", &d->siz, &d->siz);
+	d->pl_f2 = xpm_img(d->video, "./sprite/player_f2.xpm", &d->siz, &d->siz);
+	d->pl_f1 = xpm_img(d->video, "./sprite/player_f1.xpm", &d->siz, &d->siz);
+	d->pl_l = xpm_img(d->video, "./sprite/player_l.xpm", &d->siz, &d->siz);
+	d->pl_l1 = xpm_img(d->video, "./sprite/player_l1.xpm", &d->siz, &d->siz);
+	d->pl_p_b = xpm_img(d->video, "./sprite/player_p_b.xpm", &d->siz, &d->siz);
+	d->pl_p_f = xpm_img(d->video, "./sprite/player_p_f.xpm", &d->siz, &d->siz);
+	d->pl_p_r = xpm_img(d->video, "./sprite/player_p_r.xpm", &d->siz, &d->siz);
+	d->pl_p_l = xpm_img(d->video, "./sprite/player_p_l.xpm", &d->siz, &d->siz);
+	d->pl_r = xpm_img(d->video, "./sprite/player_r.xpm", &d->siz, &d->siz);
+	d->pl_r1 = xpm_img(d->video, "./sprite/player_r1.xpm", &d->siz, &d->siz);
 }
 
 int	init_sprite(t_list *map)

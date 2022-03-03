@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:04:20 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 18:38:50 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 19:15:23 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,19 +60,19 @@ typedef struct s_img{
 	void		*loki;
 	void		*door;
 	void		*door_o;
-	void		*player_b;
-	void		*player_b1;
-	void		*player_b2;
-	void		*player_f2;
-	void		*player_f1;
-	void		*player_l;
-	void		*player_l1;
-	void		*player_p_b;
-	void		*player_p_f;
-	void		*player_p_l;
-	void		*player_p_r;
-	void		*player_r;
-	void		*player_r1;
+	void		*pl_b;
+	void		*pl_b1;
+	void		*pl_b2;
+	void		*pl_f2;
+	void		*pl_f1;
+	void		*pl_l;
+	void		*pl_l1;
+	void		*pl_p_b;
+	void		*pl_p_f;
+	void		*pl_p_l;
+	void		*pl_p_r;
+	void		*pl_r;
+	void		*pl_r1;
 	void		*opal;
 	int			siz;
 	int			flag;

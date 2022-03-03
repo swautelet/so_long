@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:11:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 18:31:51 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 19:15:23 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,17 @@ static void	sub_animate(t_img *dt, int off, void *player, int posy_inc)
 int	animate(t_img *dt)
 {
 	if (dt->dir == DIR_RIGHT)
-		sub_animate(dt, 1, dt->player_r, 0);
+		sub_animate(dt, 1, dt->pl_r, 0);
 	else if (dt->dir == DIR_LEFT)
-		sub_animate(dt, -1, dt->player_l, 0);
+		sub_animate(dt, -1, dt->pl_l, 0);
 	else if (dt->dir == DIR_UP)
-		sub_animate(dt, 0, dt->player_b2, -1);
+		sub_animate(dt, 0, dt->pl_b2, -1);
 	else if (dt->dir == DIR_DOWN)
-		sub_animate(dt, 0, dt->player_f2, 1);
+		sub_animate(dt, 0, dt->pl_f2, 1);
 	else if (dt->dir == DIR_DOWN2)
 		sub_animate(dt, 0, dt->player, 0);
 	else if (dt->dir == DIR_UP2)
-		sub_animate(dt, 0, dt->player_b, 0);
+		sub_animate(dt, 0, dt->pl_b, 0);
 	if (dt->dir != DIR_UP && dt->dir != DIR_DOWN)
 		dt->done = 0;
 	return (0);

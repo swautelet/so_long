@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/02 19:57:29 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 19:09:35 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,12 @@ int	map_error(t_list *map)
 		}
 		if (ft_strlen(map->content) != check.len)
 		{
-			printf("error\nthe map is not a rectangle");
+			printf("Error\nthe map is not a rectangle");
 			return (-1);
 		}
 		if (map->content[0] != '1' || map->content[check.len - 2] != '1')
 		{
-			printf("error\nthere miss a wall around the map");
+			printf("Error\nthere miss a wall around the map");
 			return (-1);
 		}
 		check.height++;
@@ -95,29 +95,29 @@ int	map_error(t_list *map)
 	{
 		if (map->content[check.i] != '1')
 		{
-			printf("error\nthere miss a wall around the map");
+			printf("Error\nthere miss a wall around the map");
 			return (-1);
 		}
 		check.i++;
 	}
 	if (check.len < 3 || check.height < 3)
 	{
-		printf("error\nthe map is too short");
+		printf("Error\nthe map is too short");
 		return (-1);
 	}
 	if (check.player != 1)
 	{
-		printf("error\nthere is %d player there should be only one", check.player);
+		printf("Error\nthere should be only one player");
 		return (-1);
 	}
 	if (check.exit != 1)
 	{
-		printf("error\nthere is %d exit there should be only one", check.exit);
+		printf("Error\nthere is %d exit there should be only one", check.exit);
 		return (-1);
 	}
 	if (check.collectible == 0)
 	{
-		printf("error\nthere is no collectible");
+		printf("Error\nthere is no collectible");
 		return (-1);
 	}
 	return (0);

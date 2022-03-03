@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:31:31 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 19:02:28 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 19:15:23 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,19 +42,19 @@ static void	destroy_image(t_img *dt)
 	mlx_destroy_image(dt->video, dt->door);
 	mlx_destroy_image(dt->video, dt->door_o);
 	mlx_destroy_image(dt->video, dt->opal);
-	mlx_destroy_image(dt->video, dt->player_b);
-	mlx_destroy_image(dt->video, dt->player_b1);
-	mlx_destroy_image(dt->video, dt->player_b2);
-	mlx_destroy_image(dt->video, dt->player_f2);
-	mlx_destroy_image(dt->video, dt->player_f1);
-	mlx_destroy_image(dt->video, dt->player_l);
-	mlx_destroy_image(dt->video, dt->player_l1);
-	mlx_destroy_image(dt->video, dt->player_p_b);
-	mlx_destroy_image(dt->video, dt->player_p_f);
-	mlx_destroy_image(dt->video, dt->player_p_r);
-	mlx_destroy_image(dt->video, dt->player_p_l);
-	mlx_destroy_image(dt->video, dt->player_r);
-	mlx_destroy_image(dt->video, dt->player_r1);
+	mlx_destroy_image(dt->video, dt->pl_b);
+	mlx_destroy_image(dt->video, dt->pl_b1);
+	mlx_destroy_image(dt->video, dt->pl_b2);
+	mlx_destroy_image(dt->video, dt->pl_f2);
+	mlx_destroy_image(dt->video, dt->pl_f1);
+	mlx_destroy_image(dt->video, dt->pl_l);
+	mlx_destroy_image(dt->video, dt->pl_l1);
+	mlx_destroy_image(dt->video, dt->pl_p_b);
+	mlx_destroy_image(dt->video, dt->pl_p_f);
+	mlx_destroy_image(dt->video, dt->pl_p_r);
+	mlx_destroy_image(dt->video, dt->pl_p_l);
+	mlx_destroy_image(dt->video, dt->pl_r);
+	mlx_destroy_image(dt->video, dt->pl_r1);
 	mlx_destroy_image(dt->video, dt->wall);
 	mlx_destroy_image(dt->video, dt->floor);
 }
