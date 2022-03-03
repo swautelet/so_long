@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 20:26:33 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 20:32:23 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,24 +45,30 @@ static int	count_error(t_check check)
 	return (0);
 }
 
-static int	is_a_wall(t_list *map)
+static int	is_a_wall(t_list *map, t_check check)
 {
-	int	i;
-
-	i = 0;
-	while (map->content[i] != '\n')
+	check.i = 0;
+	while (map->content[check.i] != '\n')
 	{
-		if (map->content[i] != '1')
+		if (map->content[check.i] != '1')
 			return (error_msg("error\nthere miss a wall around the map\n"));
-		i++;
+		check.i++;
 	}
-	map = ft_lstlast(map);
-	i = 0;
-	while (map->content[i] != '\n')
+	while (map->next != NULL)
 	{
-		if (map->content[i] != '1')
+		check.i = 0;
+		map = map->next;
+		if (ft_strlen(map->content) != check.len)
+			return (error_msg("Error\nthe map is not a rectangle\n"));
+		if (map->content[0] != '1' || map->content[check.len - 2] != '1')
+			return (error_msg("Error\nthere miss a wall around the map\n"));
+	}
+	check.i = 0;
+	while (map->content[check.i] != '\n')
+	{
+		if (map->content[check.i] != '1')
 			return (error_msg("error\nthere miss a wall around the map\n"));
-		i++;
+		check.i++;
 	}
 	return (0);
 }
@@ -75,7 +81,7 @@ int	map_error(t_list *map)
 	check.player = 0;
 	check.collectible = 0;
 	check.len = ft_strlen(map->content);
-	if (is_a_wall(map) == -1)
+	if (is_a_wall(map, check) == -1)
 		return (-1);
 	check.height = ft_lstsize(map);
 	while (map->next != NULL)
@@ -92,10 +98,6 @@ int	map_error(t_list *map)
 				check.collectible++;
 			check.i++;
 		}
-		if (ft_strlen(map->content) != check.len)
-			return (error_msg("Error\nthe map is not a rectangle\n"));
-		if (map->content[0] != '1' || map->content[check.len - 2] != '1')
-			return (error_msg("Error\nthere miss a wall around the map\n"));
 	}
 	return (count_error(check));
 }
