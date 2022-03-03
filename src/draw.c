@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:33:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 19:41:41 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 19:45:48 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,16 @@ static void	draw_collectible(t_img *dt, t_list *map, size_t i, size_t j)
 	dt->flag++;
 }
 
+static void	draw_background(t_img *dt, t_list *map, size_t i, size_t j)
+{
+	if (map->content[i] == '1')
+		mlx_put_image_to_window(dt->video, dt->win,
+			dt->wall, 64 * i, 64 * j);
+	else
+		mlx_put_image_to_window(dt->video, dt->win,
+			dt->floor, 64 * i, 64 * j);
+}
+
 int	draw(t_list *map, t_img *dt)
 {
 	size_t	i;
@@ -57,12 +67,7 @@ int	draw(t_list *map, t_img *dt)
 		map = map->next;
 		while (i < ft_strlen(map->content) - 1)
 		{
-			if (map->content[i] == '1')
-				mlx_put_image_to_window(dt->video, dt->win,
-					dt->wall, 64 * i, 64 * j);
-			else
-				mlx_put_image_to_window(dt->video, dt->win,
-					dt->floor, 64 * i, 64 * j);
+			draw_background(dt, map, i, j);
 			if (map->content[i] == 'P')
 			{
 				dt->pos_x = i;
