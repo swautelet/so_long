@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 20:36:22 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 21:36:28 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ static int	count_error(t_check check)
 	if (check.len < 3 || check.height < 3)
 		return (error_msg("Error\nthe map is too short\n"));
 	if (check.player != 1)
-		return (error_msg("Error\nthere should be only one player\n"));
+		return (error_msg("Error\nthere should be one player\n"));
 	if (check.exit != 1)
-		return (error_msg("Error\nthere should be only one exit\n"));
+		return (error_msg("Error\nthere should be one exit\n"));
 	if (check.collectible == 0)
 		return (error_msg("Error\nthere is no collectible\n"));
 	return (0);
