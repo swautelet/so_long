@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:04:20 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 17:34:37 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 18:25:23 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ void		move_up(t_img *sprite);
 void		move_left(t_img *sprite);
 void		move_down(t_img *sprite);
 void		move_right(t_img *sprite);
-int			ft_authorized(t_img *sprite, char str);
+int			ft_authorized(t_img *sprite, int x_off, int y_off);
 int			timer(t_img *sprite);
 int			animate(t_img *sprite);
 void		printmove(t_img *sprite);

@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:31:31 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 17:35:58 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 18:25:57 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	move_up(t_img *dt)
 {
 	int	check;
 
-	check = ft_authorized(dt, DIR_UP);
+	check = ft_authorized(dt, 0, -1);
 	if (check == 0)
 	{
 		mlx_put_image_to_window(dt->video, dt->win, dt->floor, dt->pos_x * dt->siz, dt->pos_y * dt->siz);
@@ -92,7 +92,7 @@ void	move_left(t_img *dt)
 {
 	int	check;
 
-	check = ft_authorized(dt, DIR_LEFT);
+	check = ft_authorized(dt, -1, 0);
 	if (check == 0)
 	{
 		mlx_put_image_to_window(dt->video, dt->win, dt->floor, dt->pos_x * dt->siz, dt->pos_y * dt->siz);
@@ -118,7 +118,7 @@ void	move_down(t_img *dt)
 {
 	int	check;
 
-	check = ft_authorized(dt, DIR_DOWN);
+	check = ft_authorized(dt, 0, 1);
 	if (check == 0)
 	{
 		mlx_put_image_to_window(dt->video, dt->win, dt->floor, dt->pos_x * dt->siz, dt->pos_y * dt->siz);
@@ -143,7 +143,7 @@ void	move_right(t_img *dt)
 {
 	int	check;
 
-	check = ft_authorized(dt, DIR_RIGHT);
+	check = ft_authorized(dt, 1, 0);
 	if (check == 0)
 	{
 		mlx_put_image_to_window(dt->video, dt->win, dt->floor, dt->pos_x * dt->siz, dt->pos_y * dt->siz);
