@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 20:24:15 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 20:26:33 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,14 @@ static int	is_a_wall(t_list *map)
 			return (error_msg("error\nthere miss a wall around the map\n"));
 		i++;
 	}
+	map = ft_lstlast(map);
+	i = 0;
+	while (map->content[i] != '\n')
+	{
+		if (map->content[i] != '1')
+			return (error_msg("error\nthere miss a wall around the map\n"));
+		i++;
+	}
 	return (0);
 }
 
@@ -89,7 +97,5 @@ int	map_error(t_list *map)
 		if (map->content[0] != '1' || map->content[check.len - 2] != '1')
 			return (error_msg("Error\nthere miss a wall around the map\n"));
 	}
-	if (is_a_wall(map) == -1)
-		return (-1);
 	return (count_error(check));
 }
