@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 21:36:28 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 22:03:03 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,24 +24,26 @@ int	ft_error(int argc, char **argv)
 
 	ext = ".ber";
 	if (argc < 2)
-		return (error_msg("error\nTheres's no map\n"));
+		return (error_msg("Error\nTheres's no map\n"));
 	if (argc > 2)
-		return (error_msg("error\nthere's too much map\n"));
+		return (error_msg("Error\nThere's too much map\n"));
 	if (ft_strncmp(ft_strnstr(argv[1], ".ber", SIZE_T_MAX), ext, 4) != 0)
-		return (error_msg("error\nthe map is in the wrong format\n"));
+		return (error_msg("Error\nThe map is in the wrong format\n"));
 	return (0);
 }
 
 static int	count_error(t_check check)
 {
 	if (check.len < 3 || check.height < 3)
-		return (error_msg("Error\nthe map is too short\n"));
+		return (error_msg("Error\nThe map is too short\n"));
 	if (check.player != 1)
-		return (error_msg("Error\nthere should be one player\n"));
+		return (error_msg("Error\nThere should be one player\n"));
 	if (check.exit != 1)
-		return (error_msg("Error\nthere should be one exit\n"));
+		return (error_msg("Error\nThere should be one exit\n"));
 	if (check.collectible == 0)
-		return (error_msg("Error\nthere is no collectible\n"));
+		return (error_msg("Error\nThere is no collectible\n"));
+	if (check.len > 42 || check.height > 21)
+		return (error_msg("Error\nThe map is too big for the screen\n"));
 	return (0);
 }
 
@@ -51,7 +53,7 @@ static int	is_a_wall(t_list *map, t_check check)
 	while (map->content[check.i] != '\n')
 	{
 		if (map->content[check.i] != '1')
-			return (error_msg("error\nthere miss a wall around the map\n"));
+			return (error_msg("error\nThere miss a wall around the map\n"));
 		check.i++;
 	}
 	while (map->next != NULL)
@@ -59,15 +61,15 @@ static int	is_a_wall(t_list *map, t_check check)
 		check.i = 0;
 		map = map->next;
 		if (ft_strlen(map->content) != check.len)
-			return (error_msg("Error\nthe map is not a rectangle\n"));
+			return (error_msg("Error\nThe map is not a rectangle\n"));
 		if (map->content[0] != '1' || map->content[check.len - 2] != '1')
-			return (error_msg("Error\nthere miss a wall around the map\n"));
+			return (error_msg("Error\nThere miss a wall around the map\n"));
 	}
 	check.i = 0;
 	while (map->content[check.i] != '\n')
 	{
 		if (map->content[check.i] != '1')
-			return (error_msg("error\nthere miss a wall around the map\n"));
+			return (error_msg("error\nThere miss a wall around the map\n"));
 		check.i++;
 	}
 	return (0);
