@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:33:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 16:50:12 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 17:36:18 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,6 +141,7 @@ int	draw(t_list *map, t_img *dt)
 			i++;
 		}
 	}
+	dt->done = 0;
 	mlx_loop_hook(dt->video, animate, dt);
 	mlx_hook(dt->win, 02, 1L<<0, keyplan, dt);
 	mlx_hook(dt->win, 17, 1L<<5, ft_exit, dt);

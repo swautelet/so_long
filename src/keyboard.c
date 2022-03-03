@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:31:31 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 16:53:45 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 17:35:58 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@ int	keyplan(int keycode, t_img *dt)
 {
 	if (keycode == 53)
 		ft_exit(dt);
+	if (dt->done != 0)
+		return (0);
+	dt->done++;
 	if (keycode == 13 && dt->pos_y > 1)
 		move_up(dt);
 	if (keycode == 0 && dt->pos_x > 0)

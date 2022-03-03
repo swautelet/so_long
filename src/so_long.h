@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:04:20 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 16:49:20 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 17:34:37 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ typedef struct s_img{
 	int			move;
 	char		dir;
 	t_list		*map;
+	char		done;
 }	t_img;
 typedef struct s_check{
 	size_t	len;

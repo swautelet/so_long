@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:11:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 16:53:40 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 17:36:58 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,5 +108,6 @@ int	animate(t_img *dt)
 			printmove(dt);
 		dt->dir = PAUSE;
 	}
+	dt->done = 0;
 	return (0);
 }
