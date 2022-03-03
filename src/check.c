@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:30:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 18:35:06 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 19:17:07 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 static void	open_door(t_img *dt)
 {
 	mlx_put_image_to_window(dt->video, dt->win, dt->floor,
-		dt->pos_d_x * dt->siz, dt->pos_d_y * dt->siz);
+		dt->pos_d_x * dt->s, dt->pos_d_y * dt->s);
 	mlx_put_image_to_window(dt->video, dt->win, dt->door_o,
-		dt->pos_d_x * dt->siz, dt->pos_d_y * dt->siz);
+		dt->pos_d_x * dt->s, dt->pos_d_y * dt->s);
 }
 
 int	ft_authorized(t_img *dt, int x_off, int y_off)

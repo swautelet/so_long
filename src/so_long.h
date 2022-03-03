@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:04:20 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 19:15:23 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 19:17:07 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ typedef struct s_img{
 	void		*pl_r;
 	void		*pl_r1;
 	void		*opal;
-	int			siz;
+	int			s;
 	int			flag;
 	int			pos_x;
 	int			pos_y;

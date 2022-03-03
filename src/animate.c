@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/02 17:11:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 19:15:23 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 19:17:07 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,18 @@ static void	sub_animate(t_img *dt, int off, void *player, int posy_inc)
 {
 	usleep(ANIM_WAIT);
 	mlx_put_image_to_window(dt->video, dt->win, dt->floor,
-		(dt->pos_x - off) * dt->siz, dt->pos_y * dt->siz);
+		(dt->pos_x - off) * dt->s, dt->pos_y * dt->s);
 	if ((dt->pos_x - off) == dt->pos_d_x && dt->pos_y == dt->pos_d_y)
 		mlx_put_image_to_window(dt->video, dt->win, dt->door,
-			(dt->pos_x - off) * dt->siz, dt->pos_y * dt->siz);
+			(dt->pos_x - off) * dt->s, dt->pos_y * dt->s);
 	mlx_put_image_to_window(dt->video, dt->win, dt->floor,
-		dt->pos_x * dt->siz, dt->pos_y * dt->siz);
+		dt->pos_x * dt->s, dt->pos_y * dt->s);
 	if (dt->pos_x == dt->pos_d_x && dt->pos_y == dt->pos_d_y)
 		mlx_put_image_to_window(dt->video, dt->win, dt->door,
-			dt->pos_x * dt->siz, dt->pos_y * dt->siz);
+			dt->pos_x * dt->s, dt->pos_y * dt->s);
 	dt->pos_y += posy_inc;
 	mlx_put_image_to_window(dt->video, dt->win, player,
-		dt->pos_x * dt->siz, dt->pos_y * dt->siz);
+		dt->pos_x * dt->s, dt->pos_y * dt->s);
 	if (dt->dir != DIR_DOWN2 && dt->dir != DIR_UP2)
 		dt->move++;
 	sub_animate_end(dt);
