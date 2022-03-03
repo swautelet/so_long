@@ -6,11 +6,34 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:33:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 19:22:19 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 19:41:41 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static void	draw_collectible(t_img *dt, t_list *map, size_t i, size_t j)
+{
+	if (map->content[i] == 'C' && dt->flag == 0)
+		mlx_put_image_to_window(dt->video, dt->win,
+			dt->loki, 64 * i, 64 * j);
+	else if (map->content[i] == 'C' && dt->flag == 1)
+		mlx_put_image_to_window(dt->video, dt->win,
+			dt->boot, 64 * i, 64 * j);
+	else if (map->content[i] == 'C' && dt->flag == 2)
+		mlx_put_image_to_window(dt->video, dt->win,
+			dt->collar, 64 * i, 64 * j);
+	else if (map->content[i] == 'C' && dt->flag == 3)
+		mlx_put_image_to_window(dt->video, dt->win,
+			dt->leash, 64 * i, 64 * j);
+	else if (map->content[i] == 'C' && dt->flag == 4)
+		mlx_put_image_to_window(dt->video, dt->win,
+			dt->key, 64 * i, 64 * j);
+	else if (map->content[i] == 'C' && dt->flag >= 5)
+		mlx_put_image_to_window(dt->video, dt->win,
+			dt->poopbag, 64 * i, 64 * j);
+	dt->flag++;
+}
 
 int	draw(t_list *map, t_img *dt)
 {
@@ -57,49 +80,15 @@ int	draw(t_list *map, t_img *dt)
 			if (map->content[i] == 'N')
 				mlx_put_image_to_window(dt->video, dt->win,
 					dt->opal, 64 * i, 64 * j);
-			if (map->content[i] == 'C' && dt->flag == 0)
-			{
-				mlx_put_image_to_window(dt->video, dt->win,
-					dt->loki, 64 * i, 64 * j);
-				dt->flag++;
-			}
-			else if (map->content[i] == 'C' && dt->flag == 1)
-			{
-				mlx_put_image_to_window(dt->video, dt->win,
-					dt->boot, 64 * i, 64 * j);
-				dt->flag++;
-			}
-			else if (map->content[i] == 'C' && dt->flag == 2)
-			{
-				mlx_put_image_to_window(dt->video, dt->win,
-					dt->collar, 64 * i, 64 * j);
-				dt->flag++;
-			}
-			else if (map->content[i] == 'C' && dt->flag == 3)
-			{
-				mlx_put_image_to_window(dt->video, dt->win,
-					dt->leash, 64 * i, 64 * j);
-				dt->flag++;
-			}
-			else if (map->content[i] == 'C' && dt->flag == 4)
-			{
-				mlx_put_image_to_window(dt->video, dt->win,
-					dt->key, 64 * i, 64 * j);
-				dt->flag++;
-			}
-			else if (map->content[i] == 'C' && dt->flag >= 5)
-			{
-				mlx_put_image_to_window(dt->video, dt->win,
-					dt->poopbag, 64 * i, 64 * j);
-				dt->flag++;
-			}
+			if (map->content[i] == 'C')
+				draw_collectible(dt, map, i, j);
 			i++;
 		}
 	}
 	dt->done = 0;
 	mlx_loop_hook(dt->video, animate, dt);
-	mlx_hook(dt->win, 02, 1L<<0, keyplan, dt);
-	mlx_hook(dt->win, 17, 1L<<5, ft_exit, dt);
+	mlx_hook(dt->win, 02, 1L << 0, keyplan, dt);
+	mlx_hook(dt->win, 17, 1L << 5, ft_exit, dt);
 	mlx_loop(dt->video);
 	return (0);
 }
