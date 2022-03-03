@@ -6,7 +6,7 @@
 #    By: swautele <swautele@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 19:32:53 by swautele          #+#    #+#              #
-#    Updated: 2022/03/03 16:24:33 by swautele         ###   ########.fr        #
+#    Updated: 2022/03/03 16:26:58 by swautele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,8 +55,7 @@ fclean : clean
 re : fclean all
 
 save : 
-	git add $(FILES) $(MAPS) ./libft Makefile $(HEADER) $(SPRITE)
-	git commit -m autosave
+	git commit -am autosave
 	git push https://github.com/swautelet/so_long.git
 
 .phony : $(NAME) clean re test all lib fclean
