@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 19:09:35 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 19:27:30 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,18 +62,8 @@ int	map_error(t_list *map)
 		{
 			if (map->content[check.i] == 'P')
 				check.player++;
-			check.i++;
-		}
-		check.i = 0;
-		while (map->content[check.i] != '\n')
-		{
 			if (map->content[check.i] == 'E')
 				check.exit++;
-			check.i++;
-		}
-		check.i = 0;
-		while (map->content[check.i] != '\n')
-		{
 			if (map->content[check.i] == 'C')
 				check.collectible++;
 			check.i++;
@@ -112,7 +102,7 @@ int	map_error(t_list *map)
 	}
 	if (check.exit != 1)
 	{
-		printf("Error\nthere is %d exit there should be only one", check.exit);
+		printf("Error\nthere should be only one exit");
 		return (-1);
 	}
 	if (check.collectible == 0)
