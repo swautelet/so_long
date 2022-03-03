@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:31:31 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/02 19:58:15 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 16:22:42 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,20 +67,20 @@ void	move_up(t_img *sprite)
 	check = ft_authorized(sprite, DIR_UP);
 	if (check == 0)
 	{
-		mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+		mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
 		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y)
-			mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
-		mlx_put_image_to_window(sprite->video, sprite->win, sprite->player_b1, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+			mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
+		mlx_put_image_to_window(sprite->video, sprite->win, sprite->player_b1, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
 		sprite->dir = DIR_UP;
 	}
 	if (check == 2)
 	{
 		usleep(ANIM_WAIT);
-		mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+		mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
 		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y)
-			mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+			mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
 		sprite->pos_y--;
-		mlx_put_image_to_window(sprite->video, sprite->win, sprite->player_p_b, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+		mlx_put_image_to_window(sprite->video, sprite->win, sprite->player_p_b, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
 		sprite->dir = DIR_UP2;
 	}
 }
@@ -92,18 +92,18 @@ void	move_left(t_img *sprite)
 	check = ft_authorized(sprite, DIR_LEFT);
 	if (check == 0)
 	{
-		mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+		mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
 		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y)
-			mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
-		mlx_put_image_to_window(sprite->video, sprite->win, sprite->player_l1, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+			mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
+		mlx_put_image_to_window(sprite->video, sprite->win, sprite->player_l1, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
 		sprite->dir = DIR_LEFT;
 	}
 	if (check == 2)
 	{
 		usleep(ANIM_WAIT);
-		mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+		mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
 		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y)
-			mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+			mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
 		mlx_put_image_to_window(sprite->video, sprite->win, sprite->player_p_l, (sprite->pos_x - 1) * 64, sprite->pos_y * 64);
 		sprite->dir = DIR_LEFT;
 	}
@@ -116,20 +116,20 @@ void	move_down(t_img *sprite)
 	check = ft_authorized(sprite, DIR_DOWN);
 	if (check == 0)
 	{
-		mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+		mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
 		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y)
-			mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
-		mlx_put_image_to_window(sprite->video, sprite->win, sprite->player_f1, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+			mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
+		mlx_put_image_to_window(sprite->video, sprite->win, sprite->player_f1, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
 		sprite->dir = DIR_DOWN;
 	}
 	if (check == 2)
 	{
 		usleep(ANIM_WAIT);
-		mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+		mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
 		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y)
-			mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+			mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
 		sprite->pos_y++;
-		mlx_put_image_to_window(sprite->video, sprite->win, sprite->player_p_f, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+		mlx_put_image_to_window(sprite->video, sprite->win, sprite->player_p_f, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
 		sprite->dir = DIR_DOWN2;
 	}
 }
@@ -141,18 +141,18 @@ void	move_right(t_img *sprite)
 	check = ft_authorized(sprite, DIR_RIGHT);
 	if (check == 0)
 	{
-		mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+		mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
 		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y)
-			mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
-		mlx_put_image_to_window(sprite->video, sprite->win, sprite->player_r1, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+			mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
+		mlx_put_image_to_window(sprite->video, sprite->win, sprite->player_r1, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
 		sprite->dir = DIR_RIGHT;
 	}
 	if (check == 2)
 	{
 		usleep(ANIM_WAIT);
-		mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+		mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
 		if (sprite->pos_x == sprite->pos_d_x && sprite->pos_y == sprite->pos_d_y)
-			mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, sprite->pos_x * sprite->size, sprite->pos_y * sprite->size);
+			mlx_put_image_to_window(sprite->video, sprite->win, sprite->door, sprite->pos_x * sprite->siz, sprite->pos_y * sprite->siz);
 		mlx_put_image_to_window(sprite->video, sprite->win, sprite->player_p_r, (sprite->pos_x + 1) * 64, sprite->pos_y * 64);
 		sprite->dir = DIR_RIGHT;
 	}

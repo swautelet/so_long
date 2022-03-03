@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: simonwautelet <simonwautelet@student.42    +#+  +:+       +#+        */
+/*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:30:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/02 21:20:42 by simonwautel      ###   ########.fr       */
+/*   Updated: 2022/03/03 16:22:42 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ int	ft_authorized(t_img *sprite, char str)
 				sprite->flag--;
 				if (sprite->flag == 0)
 				{
-					mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_d_x * sprite->size, sprite->pos_d_y * sprite->size);
-					mlx_put_image_to_window(sprite->video, sprite->win, sprite->door_o, sprite->pos_d_x * sprite->size, sprite->pos_d_y * sprite->size);
+					mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_d_x * sprite->siz, sprite->pos_d_y * sprite->siz);
+					mlx_put_image_to_window(sprite->video, sprite->win, sprite->door_o, sprite->pos_d_x * sprite->siz, sprite->pos_d_y * sprite->siz);
 				}
 				return (2);
 			}
@@ -56,8 +56,8 @@ int	ft_authorized(t_img *sprite, char str)
 				sprite->flag--;
 				if (sprite->flag == 0)
 				{
-					mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_d_x * sprite->size, sprite->pos_d_y * sprite->size);
-					mlx_put_image_to_window(sprite->video, sprite->win, sprite->door_o, sprite->pos_d_x * sprite->size, sprite->pos_d_y * sprite->size);
+					mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_d_x * sprite->siz, sprite->pos_d_y * sprite->siz);
+					mlx_put_image_to_window(sprite->video, sprite->win, sprite->door_o, sprite->pos_d_x * sprite->siz, sprite->pos_d_y * sprite->siz);
 				}
 				return (2);
 			}
@@ -81,8 +81,8 @@ int	ft_authorized(t_img *sprite, char str)
 				sprite->flag--;
 				if (sprite->flag == 0)
 				{
-					mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_d_x * sprite->size, sprite->pos_d_y * sprite->size);
-					mlx_put_image_to_window(sprite->video, sprite->win, sprite->door_o, sprite->pos_d_x * sprite->size, sprite->pos_d_y * sprite->size);
+					mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_d_x * sprite->siz, sprite->pos_d_y * sprite->siz);
+					mlx_put_image_to_window(sprite->video, sprite->win, sprite->door_o, sprite->pos_d_x * sprite->siz, sprite->pos_d_y * sprite->siz);
 				}
 				return (2);
 			}
@@ -106,8 +106,8 @@ int	ft_authorized(t_img *sprite, char str)
 				sprite->flag--;
 				if (sprite->flag == 0)
 				{
-					mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_d_x * sprite->size, sprite->pos_d_y * sprite->size);
-					mlx_put_image_to_window(sprite->video, sprite->win, sprite->door_o, sprite->pos_d_x * sprite->size, sprite->pos_d_y * sprite->size);
+					mlx_put_image_to_window(sprite->video, sprite->win, sprite->floor, sprite->pos_d_x * sprite->siz, sprite->pos_d_y * sprite->siz);
+					mlx_put_image_to_window(sprite->video, sprite->win, sprite->door_o, sprite->pos_d_x * sprite->siz, sprite->pos_d_y * sprite->siz);
 				}
 				return (2);
 			}
