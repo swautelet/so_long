@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:02:17 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 16:15:19 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 18:50:48 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,31 @@
 
 t_list	*map_reader(char *name)
 {
-	int			fd;
-	char		*line;
-	t_list		*map;
-	t_list		*new;
-	int			i;
+	t_reader	*read;
+	t_reader	fuck;
 
-	i = 0;
-	fd = open(name, O_RDONLY);
-	line = get_next_line(fd);
-	map = ft_lstnew(line);
-	map->line = i;
-	while (line)
+	read = &fuck;
+	read->i = 0;
+	read->fd = open(name, O_RDONLY);
+	read->line = get_next_line(read->fd);
+	read->map = ft_lstnew(read->line);
+	read->map->line = read->i;
+	while (read->line)
 	{
-		line = get_next_line(fd);
-		i++;
-		if (line != NULL)
+		read->line = get_next_line(read->fd);
+		read->i++;
+		if (read->line != NULL)
 		{
-			new = ft_lstnew(line);
-			if (new == NULL)
+			read->new = ft_lstnew(read->line);
+			if (read->new == NULL)
 			{
-				free(line);
-				return (map);
+				free(read->line);
+				return (read->map);
 			}
-			new->line = i;
-			ft_lstadd_back(&map, new);
+			read->new->line = read->i;
+			ft_lstadd_back(&read->map, read->new);
 		}
 	}
-	close(fd);
-	return (map);
+	close(read->fd);
+	return (read->map);
 }

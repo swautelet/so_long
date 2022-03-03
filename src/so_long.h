@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:04:20 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 18:25:23 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 18:38:50 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,13 @@ enum e_dir
 	DIR_RIGHT,
 	PAUSE,
 };
-
+typedef struct s_reader{
+	int			fd;
+	char		*line;
+	t_list		*map;
+	t_list		*new;
+	int			i;
+}	t_reader;
 typedef struct s_img{
 	void		*poopbag;
 	void		*key;

@@ -6,11 +6,19 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:30:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 18:30:29 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/03 18:35:06 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static void	open_door(t_img *dt)
+{
+	mlx_put_image_to_window(dt->video, dt->win, dt->floor,
+		dt->pos_d_x * dt->siz, dt->pos_d_y * dt->siz);
+	mlx_put_image_to_window(dt->video, dt->win, dt->door_o,
+		dt->pos_d_x * dt->siz, dt->pos_d_y * dt->siz);
+}
 
 int	ft_authorized(t_img *dt, int x_off, int y_off)
 {
@@ -26,12 +34,7 @@ int	ft_authorized(t_img *dt, int x_off, int y_off)
 			read->content[dt->pos_x + x_off] = '0';
 			dt->flag--;
 			if (dt->flag == 0)
-			{
-				mlx_put_image_to_window(dt->video, dt->win, dt->floor,
-					dt->pos_d_x * dt->siz, dt->pos_d_y * dt->siz);
-				mlx_put_image_to_window(dt->video, dt->win, dt->door_o,
-					dt->pos_d_x * dt->siz, dt->pos_d_y * dt->siz);
-			}
+				open_door(dt);
 			return (2);
 		}
 		if (read->content[dt->pos_x + x_off] == 'N')
