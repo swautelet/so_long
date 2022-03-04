@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 22:03:03 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/04 18:03:48 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,16 @@ static int	error_msg(char *str)
 
 int	ft_error(int argc, char **argv)
 {
-	char	*ext;
+	size_t	i;
 
-	ext = ".ber";
+	i = ft_strlen(argv[1]);
+	i -= 1;
 	if (argc < 2)
 		return (error_msg("Error\nTheres's no map\n"));
 	if (argc > 2)
 		return (error_msg("Error\nThere's too much map\n"));
-	if (ft_strncmp(ft_strnstr(argv[1], ".ber", SIZE_T_MAX), ext, 4) != 0)
+	if (argv[1][i] != 'r' || argv[1][i - 1] != 'e' ||
+		argv[1][i - 2] != 'b' || argv[1][i - 3] != '.')
 		return (error_msg("Error\nThe map is in the wrong format\n"));
 	return (0);
 }
