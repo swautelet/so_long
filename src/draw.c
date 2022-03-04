@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/17 19:33:16 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 19:53:11 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/04 16:50:16 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int	draw(t_list *map, t_img *dt)
 	while (++i < ft_strlen(map->content) - 1)
 		mlx_put_image_to_window(dt->video, dt->win,
 			dt->wall, dt->s * i, dt->s * j);
-	mlx_string_put(dt->video, dt->win, 10, 30, 0x000000, ft_itoa(dt->move));
+	mlx_string_put(dt->video, dt->win, 10, 30, 0x000000, "0");
 	while (map->next)
 	{
 		i = -1;

@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:30:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/03 19:17:07 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/04 16:51:21 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,12 @@ int	ft_authorized(t_img *dt, int x_off, int y_off)
 
 void	printmove(t_img *sprite)
 {
+	char	*str;
+
+	str = ft_itoa(sprite->move);
 	mlx_put_image_to_window(sprite->video,
 		sprite->win, sprite->wall, 0 * 64, 0 * 64);
 	mlx_string_put(sprite->video, sprite->win, 10,
-		30, 0x000000, ft_itoa(sprite->move));
+		30, 0x000000, str);
+	free(str);
 }
