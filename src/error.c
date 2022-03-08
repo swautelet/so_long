@@ -6,13 +6,13 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/04 18:03:48 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/08 12:00:45 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static int	error_msg(char *str)
+int	error_msg(char *str)
 {
 	write(1, str, ft_strlen(str));
 	return (-1);
