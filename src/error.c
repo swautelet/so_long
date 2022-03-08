@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/08 13:13:52 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/08 13:15:41 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,28 +43,6 @@ static int	count_error(t_check check)
 	return (0);
 }
 
-static int	forbidenchar(t_list *map, t_check check)
-{
-	int		i;
-	t_list	*beginmap;
-
-	beginmap = map;
-	while (map->next)
-	{
-		i = 0;
-		while (map->content[i])
-		{
-			if (map->content[i] != 'P' && map->content[i] != 'E'
-				&& map->content[i] != '0' && map->content[i] != '1'
-				&& map->content[i] != 'C' && map->content[i] != 'N')
-				return (-1);
-			i++;
-		}
-		map = map->next;
-	}
-	return (is_a_wall(beginmap, check));
-}
-
 static int	is_a_wall(t_list *map, t_check check)
 {
 	check.i = 0;
@@ -91,6 +69,28 @@ static int	is_a_wall(t_list *map, t_check check)
 		check.i++;
 	}
 	return (0);
+}
+
+static int	forbidenchar(t_list *map, t_check check)
+{
+	int		i;
+	t_list	*beginmap;
+
+	beginmap = map;
+	while (map->next)
+	{
+		i = 0;
+		while (map->content[i])
+		{
+			if (map->content[i] != 'P' && map->content[i] != 'E'
+				&& map->content[i] != '0' && map->content[i] != '1'
+				&& map->content[i] != 'C' && map->content[i] != 'N')
+				return (error_msg("Error\nThere is a forbiden char"));
+			i++;
+		}
+		map = map->next;
+	}
+	return (is_a_wall(beginmap, check));
 }
 
 int	map_error(t_list *map)
