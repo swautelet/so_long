@@ -6,17 +6,11 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/08 13:09:37 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/08 13:13:52 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-int	error_msg(char *str)
-{
-	write(1, str, ft_strlen(str));
-	return (-1);
-}
 
 int	ft_error(int argc, char **argv)
 {
@@ -49,10 +43,12 @@ static int	count_error(t_check check)
 	return (0);
 }
 
-static int	forbidenchar(t_list *map)
+static int	forbidenchar(t_list *map, t_check check)
 {
-	int	i;
+	int		i;
+	t_list	*beginmap;
 
+	beginmap = map;
 	while (map->next)
 	{
 		i = 0;
@@ -66,7 +62,7 @@ static int	forbidenchar(t_list *map)
 		}
 		map = map->next;
 	}
-	return (0);
+	return (is_a_wall(beginmap, check));
 }
 
 static int	is_a_wall(t_list *map, t_check check)
@@ -105,15 +101,13 @@ int	map_error(t_list *map)
 	check.player = 0;
 	check.collectible = 0;
 	check.len = ft_strlen(map->content);
-	if (forbidenchar(map) == -1)
-		return (-1);
-	if (is_a_wall(map, check) == -1)
+	if (forbidenchar(map, check) == -1)
 		return (-1);
 	check.height = ft_lstsize(map);
 	while (map->next != NULL)
 	{
 		map = map->next;
-		check.i = 0;
+		check.i = -1;
 		while (map->content[check.i] != '\n')
 		{
 			if (map->content[check.i] == 'P')
