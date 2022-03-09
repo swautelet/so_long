@@ -6,7 +6,7 @@
 #    By: swautele <swautele@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/17 19:32:53 by swautele          #+#    #+#              #
-#    Updated: 2022/03/03 19:21:28 by swautele         ###   ########.fr        #
+#    Updated: 2022/03/09 15:11:55 by swautele         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,11 +35,9 @@ SPRITE = ./sprite
 
 all : $(NAME)
 
-$(NAME) : lib $(OBJECT)
-	$(CC) $(CFLAGS) $(IFLAGS) $(OBJECT) $(LIBFT) $(LFLAGS) -o $(NAME)
-
-lib :
+$(NAME) : $(OBJECT)
 	make bonus -C libft
+	$(CC) $(CFLAGS) $(IFLAGS) $(OBJECT) $(LIBFT) $(LFLAGS) -o $(NAME)
 
 test : all
 	./$(NAME) $(MAP)
