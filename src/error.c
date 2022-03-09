@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:03:08 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/08 13:15:41 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/09 13:32:24 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,12 @@ static int	forbidenchar(t_list *map, t_check check)
 	while (map->next)
 	{
 		i = 0;
-		while (map->content[i])
+		while (map->content[i] != '\n')
 		{
 			if (map->content[i] != 'P' && map->content[i] != 'E'
 				&& map->content[i] != '0' && map->content[i] != '1'
 				&& map->content[i] != 'C' && map->content[i] != 'N')
-				return (error_msg("Error\nThere is a forbiden char"));
+				return (error_msg("Error\nThere is a forbiden char\n"));
 			i++;
 		}
 		map = map->next;
