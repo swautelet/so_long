@@ -6,7 +6,7 @@
 /*   By: swautele <swautele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 13:02:17 by swautele          #+#    #+#             */
-/*   Updated: 2022/03/04 17:36:13 by swautele         ###   ########.fr       */
+/*   Updated: 2022/03/09 15:13:49 by swautele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static t_reader	reader_init(char *name)
 	read.i = 0;
 	read.fd = open(name, O_RDONLY);
 	if (read.fd < 0)
-		exit (-1);
+		exit (error_msg("Error\nCan't open the map"));
 	read.line = get_next_line(read.fd);
 	read.map = ft_lstnew(read.line);
 	read.map->line = read.i;
